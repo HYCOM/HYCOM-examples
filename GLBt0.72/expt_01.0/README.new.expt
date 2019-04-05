@@ -1,0 +1,20 @@
+README.new.expt:
+
+The new_expt.csh script creates a new expt from an existing one.
+
+The two can be for different regions (set RO and RN to different regions).
+
+The two can use different directory paths (e.g. DO and DN could be 
+HYCOM-examples/${RO}/${EO} and hycom/${RN}/${EN}).
+
+The scratch directory prefix must be separate from the permanent path, but
+differs from machine to machine (e.g. /p/work1/${user} or ${PN}/../../scratch).
+
+The datasets directory can be on scratch and need not include "datasets" (e.g.
+~/${DN}/.. or ~/${DN}/../datasets or ${SCRN}/${DN}/../datasets).
+
+Often the new case will use the same relax files as the old, if so uncomment
+the relax link.
+
+Our pre-2.3 scripts did not have a separate datasets directory (DS = ~/${DN}/..),
+and typically ran under ~/hycom (DN = hycom/${RN}/${EN}).

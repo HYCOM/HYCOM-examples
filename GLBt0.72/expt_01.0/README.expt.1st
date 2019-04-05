@@ -1,0 +1,7 @@
+README.expt.1st:
+
+Leave ~/HYCOM-examples/GLBt0.72/expt_01.0 untouched and configure new_expt.csh
+in a new expt directory to run locally as a twin of this one.  
+
+If running in ~/HYCOM-examples use a new expt number (e.g. expt_02.0), but if 
+running in at a new location (e.g. ~/hycom) then the expt number can be reused.

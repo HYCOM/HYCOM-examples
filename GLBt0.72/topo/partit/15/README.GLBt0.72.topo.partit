@@ -1,0 +1,35 @@
+HYCOM-examples/GLBt0.72/topo/partit/15/README.GLBt0.72.topo.partit
+
+Generate nearly-equal sized tile MPI partitions for GLBt0.72.
+
+a) Run depth_2d_Ssq.csh to generate candidate partitions
+b) Run size_S.csh to list the partitions in MPI task order (size_S.lis)
+c) Run ppm1.csh to softlink to the chosen partitions and make image maps
+d) Run resize8.csh to set the partition's 1st dimension for better vector
+   performance
+
+The resulting partitions are *s8:
+
+-rw-r-----. 1 wallcraf 0375G018  518 Mar 23 19:02 depth_GLBt0.72_15.016s8
+-rw-r-----. 1 wallcraf 0375G018  690 Mar 23 19:02 depth_GLBt0.72_15.024s8
+-rw-r-----. 1 wallcraf 0375G018  776 Mar 23 19:02 depth_GLBt0.72_15.028s8
+-rw-r-----. 1 wallcraf 0375G018 1094 Mar 23 19:02 depth_GLBt0.72_15.046s8
+-rw-r-----. 1 wallcraf 0375G018 1462 Mar 23 19:02 depth_GLBt0.72_15.064s8
+-rw-r-----. 1 wallcraf 0375G018 2040 Mar 23 19:02 depth_GLBt0.72_15.089s8
+
+These were chosen for 16, 24, 32, or 48 cores per node, but will also work
+well with 2/4/8/12 cores per node.  Most discard tiles that are entirely 
+over land, and so don't necessarily fill the node.  For example 046s8 is a 
+10x5 partition with 4 discarded tiles, so two cores will be unused on a 
+48-core node.  We typically allocate unused cores to the 1st MPI node,
+but how to do this varies between MPI libraries.
+
+> head -n 2 depth_GLBt0.72_15.046s8
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    46    10     5   500   382    52    77     3       0    3850    2536
+
+For other domains:
+
+1) Use partit instead of partit_arctic for non-tripole grids
+2) Only tripole grids require npe to be an even divisor of idm
+3) For larger regions the ppm images from ppmX can be scaled down
