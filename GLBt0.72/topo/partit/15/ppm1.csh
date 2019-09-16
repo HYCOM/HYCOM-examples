@@ -38,4 +38,4 @@ foreach f ( ${T}.[0-9]??s )
   /bin/rm -f fort.21
 end
 #
-/bin/rm -f regional.grid.a regional.grid.b xbathy.pal
+#/bin/rm -f regional.grid.a regional.grid.b xbathy.pal
