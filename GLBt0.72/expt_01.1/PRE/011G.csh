@@ -52,7 +52,9 @@ case 'XC30':
 case 'XC40':
 # --- ~/HYCOM-tools/bin is for CNL (ftn)
       setenv BINRUN   "aprun -n 1"
+    breaksw
 case 'HPE':
+    breaksw
 case 'unicosmk':
     setenv ACCT `groups | awk '{print $1}'`
     breaksw
