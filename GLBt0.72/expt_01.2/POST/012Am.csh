@@ -78,7 +78,7 @@ wait
 C
 cd $S
 if ($ARCHIVE == 1) then
-awk -f $D/../${E}.awk y01=${Y01} ab=${A} $D/../${E}Am_rcp.csh >! tarm_${Y01}${A}_rcp.csh
+awk -f $D/../${E}.awk y01=${Y01} ab=${A} $D/../POST/${E}Am_rcp.csh >! tarm_${Y01}${A}_rcp.csh
  ${QSUBMIT} tarm_${Y01}${A}_rcp.csh 
 endif
 

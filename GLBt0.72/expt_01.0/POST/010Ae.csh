@@ -78,6 +78,6 @@ wait
 C
 cd $S
 if ($ARCHIVE == 1) then
-  awk -f $D/../${E}.awk y01=${Y01} ab=${A} $D/../${E}Ae_rcp.csh >! tare_${Y01}${A}_rcp.csh
+  awk -f $D/../${E}.awk y01=${Y01} ab=${A} $D/../POST/${E}Ae_rcp.csh >! tare_${Y01}${A}_rcp.csh
   ${QSUBMIT} tare_${Y01}${A}_rcp.csh 
 endif
