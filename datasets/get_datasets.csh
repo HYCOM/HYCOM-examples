@@ -11,8 +11,16 @@ mkdir -p ${DS}
 cd ${DS}/
 
 # --- get CORE2 NYF data 
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/datasets/CORE2_NYF.tar.gz
-tar xvf CORE2_NYF.tar.gz
+#wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/datasets/CORE2_NYF.tar.gz
+#tar xvf CORE2_NYF.tar.gz
+
+# --- get CFSR data for Gulf of Mexico region (1994-2010)
+wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/datasets/CFSR_GOM.tar.gz
+tar xvf CFSR_GOM.tar.gz
+
+# --- get CFSv2 data for Gulf of Mexico region (2011-2018)
+#wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/datasets/CFSv2_GOM.tar.gz
+#tar xvf CFSv2_GOM.tar.gz
 
 # --- get WOA13 for HYCOM T and S climatology data
 wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/datasets/WOA13_HYCOM.tar.gz
@@ -22,6 +30,17 @@ tar xvf WOA13_HYCOM.tar.gz
 #wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/datasets/PHC3_HYCOM.tar.gz
 #tar xvf PHC3_HYCOM.tar.gz
 
+# --- get HYCOM Reanalysis 53.X global files (to create nest files if necessary)
+mkdir -p nest
+# --- get monthly mean from GLBb0.08 53.X reanalysis (for nest)
+wget ftp://ftp.hycom.org/datasets/GLBb0.08/expt_53.X/data/meanstd/53X_archMN.1994_*_2015_*.[ab]
 
+# --- get a January monthly means from GLBb0.08 53.X reanalysis (for restart)
+wget ftp://ftp.hycom.org/datasets/GLBb0.08/expt_53.X/data/meanstd/53X_archMN.1994_01.[ab]
+cd ../
+
+# --- get raw data for Chlorophyll (if needed)
+wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/datasets/seawifs.tar.gz
+tar xvf seawifs.tar.gz
 
 

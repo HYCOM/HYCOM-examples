@@ -1,0 +1,67 @@
+Linux koehr05 3.10.0-957.12.2.el7.x86_64 #1 SMP Fri Apr 19 21:09:07 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+/p/work1/abozec/HYCOM-examples/GOMb0.08/datasets/topo
+cputime      24:00:00
+filesize     unlimited
+datasize     unlimited
+stacksize    unlimited
+coredumpsize unlimited
+memoryuse    unlimited
+vmemoryuse   unlimited
+descriptors  16384 
+memorylocked unlimited
+maxproc      4096 
+maxlocks     unlimited
+maxsignal    1544000 
+maxmessage   819200 
+maxnice      0 
+maxrtprio    0 
+maxrttime    unlimited
+
+xcspmd: idm,jdm =  263  193
+
+HEADER:
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 17x; land from 9x;                           
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Merged with depth_GLBb0.08_11 near open boundaries.                            
+landmask Gulf of Mexico Filled all seas smaller than       10000               
+min,max depth =      2.0000000  6673.1220703
+ 
+ 
+ new header:
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 17x; land from 9x;                           
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Merged with depth_GLBb0.08_11 near open boundaries.                            
+landmask Gulf of Mexico Filled all seas smaller than       10000 Filled all sea
+ 
+ larctic =  F
+ 
+
+    12 seas identified
+
+    35554 point sea (  70.04% of points)
+        1 point sea (   0.00% of points) FILLED
+          at i,j =    8  126
+        1 point sea (   0.00% of points) FILLED
+          at i,j =  193  135
+        1 point sea (   0.00% of points) FILLED
+          at i,j =   12  137
+        1 point sea (   0.00% of points) FILLED
+          at i,j =   14  137
+        1 point sea (   0.00% of points) FILLED
+          at i,j =   13  138
+        1 point sea (   0.00% of points) FILLED
+          at i,j =   19  144
+        4 point sea (   0.01% of points) FILLED
+          at i,j =  102  155
+       25 point sea (   0.05% of points) FILLED
+          at i,j =   99  165
+        2 point sea (   0.00% of points) FILLED
+          at i,j =  137  171
+        1 point sea (   0.00% of points) FILLED
+          at i,j =  145  171
+        2 point sea (   0.00% of points) FILLED
+          at i,j =  147  171
+min,max depth =      2.00000  6673.12207
+ 

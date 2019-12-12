@@ -1,0 +1,167 @@
+set time = 1
+C
+setenv OS `uname`
+uname
+switch ( Linux )
+breaksw
+C
+C --- Create HYCOM CHL files.
+C
+switch ( Linux )
+setenv pget cp
+setenv pput cp
+endsw
+C
+C --- P is primary path,
+C --- S is scratch directory,
+C --- D is permanent directory,
+C
+setenv P hycom/GOMb0.08/force/seawifs
+C
+switch ( Linux )
+if ( -e /external/fast ) then
+setenv S ~/hycom/GOMb0.08/force/seawifs/SCRATCH
+setenv D ~/hycom/GOMb0.08/force/seawifs
+endif
+breaksw
+C
+mkdir -p /home/awallcraft/hycom/GOMb0.08/force/seawifs/SCRATCH
+cd /home/awallcraft/hycom/GOMb0.08/force/seawifs/SCRATCH
+echo \033]0;/home/awallcraft/hycom/GOMb0.08/force/seawifs/SCRATCH\007/home/awallcraft/hycom/GOMb0.08/force/seawifs/SCRATCH
+]0;/home/awallcraft/hycom/GOMb0.08/force/seawifs/SCRATCH/home/awallcraft/hycom/GOMb0.08/force/seawifs/SCRATCH
+C
+C --- Input.
+C
+touch fort.71
+/bin/rm -f fort.71
+[1] 17551
+cp /home/awallcraft/flux_ieee/seawifs/chlor_a_9km.D fort.71
+C
+touch regional.grid.a regional.grid.b
+if ( -z regional.grid.b ) then
+[2] 17555
+endif
+if ( -z regional.grid.a ) then
+cp /home/awallcraft/hycom/GOMb0.08/force/seawifs/../../topo/regional.grid.b regional.grid.b
+[3] 17556
+endif
+cp /home/awallcraft/hycom/GOMb0.08/force/seawifs/../../topo/regional.grid.a regional.grid.a
+C
+[2]    Done                          cp /home/awallcraft/hycom/GOMb0.08/force/seawifs/../../topo/regional.grid.b regional.grid.b
+[4] 17559
+wait
+cp /home/awallcraft/hycom/GOMb0.08/force/seawifs/../../../ALL/force/src/kp .
+[4]  + Done                          cp /home/awallcraft/hycom/GOMb0.08/force/seawifs/../../../ALL/force/src/kp .
+[3]  + Done                          cp /home/awallcraft/hycom/GOMb0.08/force/seawifs/../../topo/regional.grid.a regional.grid.a
+[1]  + Done                          cp ~/flux_ieee/seawifs/chlor_a_9km.D fort.71
+chmod a+rx kp
+C
+/bin/rm: No match.
+C
+setenv FOR010A fort.10A
+C
+switch ( Linux )
+/bin/rm -f core
+touch core
+endsw
+C
+./kp
+
+xcspmd: idm,jdm =  263  193
+
+ READING /AFTITL/
+&AFTITL
+ CTITLE="SeaWifs monthly clim, mg/m^3            ",
+ CNAME="   chl",
+ /
+ READING /AFTIME/
+&AFTIME
+ FSTART=  0.0000000000000000     ,
+ WSTART=  0.0000000000000000     ,
+ TSTART=  0.0000000000000000     ,
+ TMAX=  0.0000000000000000     ,
+ PARMIN=  1.0000000000000000E-002,
+ PARMAX=  100.00000000000000     ,
+ PAROFF=  0.0000000000000000     ,
+ PARSCL=  1.0000000000000000     ,
+ TMPICE=  0.0000000000000000     ,
+ SEAMSK= 0.500000000    ,
+ /
+
+ READING /AFFLAG/
+&AFFLAG
+ IFFILE=          3,
+ INTERP=          0,
+ INTMSK=          0,
+ NGLOBE=          0,
+ SMOOTH=          0,
+ JPR=          8,
+ /
+
+
+ LARCTIC =  F
+
+ OUTPUT:  SeaWifs monthly clim, mg/m^3            
+
+
+
+SeaWifs monthly clim, mg/m^3                                                   
+                                                                               
+                                                                               
+                                                                               
+i/jdm =  263  193                                                              
+
+
+ MIN,MAX I COORDS =   986.50, 1238.02
+ MIN,MAX J COORDS =  1299.60, 1466.03
+
+ KPAR: MIN=   0.08178622 MAX=  16.88170242 AVE=   0.97955972 RMS=   1.70198596
+          WRITING KPAR RECORD  1    FDAY =  1111.000
+
+ KPAR: MIN=   0.07597704 MAX=  28.81073380 AVE=   0.95905966 RMS=   1.69731200
+          WRITING KPAR RECORD  2    FDAY =  1142.000
+
+ KPAR: MIN=   0.07597542 MAX=  14.31177330 AVE=   0.94732141 RMS=   1.72384238
+          WRITING KPAR RECORD  3    FDAY =  1171.000
+
+ KPAR: MIN=   0.05298883 MAX=  60.38665390 AVE=   0.92039806 RMS=   1.77410579
+          WRITING KPAR RECORD  4    FDAY =  1202.000
+
+ KPAR: MIN=   0.06017768 MAX=  19.26846123 AVE=   0.89292014 RMS=   1.75368977
+          WRITING KPAR RECORD  5    FDAY =  1232.000
+
+ KPAR: MIN=   0.05417598 MAX=  35.31466675 AVE=   0.92280173 RMS=   1.90245497
+          WRITING KPAR RECORD  6    FDAY =  1263.000
+
+ KPAR: MIN=   0.04758310 MAX=  51.37223053 AVE=   0.94128764 RMS=   2.01964617
+          WRITING KPAR RECORD  7    FDAY =  1293.000
+
+ KPAR: MIN=   0.05081926 MAX=  71.50122070 AVE=   0.89809597 RMS=   1.88711703
+          WRITING KPAR RECORD  8    FDAY =  1324.000
+
+ KPAR: MIN=   0.05491503 MAX=  33.95308304 AVE=   0.89533478 RMS=   1.75320745
+          WRITING KPAR RECORD  9    FDAY =  1355.000
+
+ KPAR: MIN=   0.05065503 MAX=  42.15454483 AVE=   0.91126424 RMS=   1.70473862
+          WRITING KPAR RECORD 10    FDAY =  1385.000
+
+ KPAR: MIN=   0.06402281 MAX=  54.46460724 AVE=   0.93108600 RMS=   1.70294297
+          WRITING KPAR RECORD 11    FDAY =  1416.000
+
+ KPAR: MIN=   0.07031516 MAX=  26.72892380 AVE=   0.95877457 RMS=   1.66557634
+          WRITING KPAR RECORD 12    FDAY =  1446.000
+
+   12 RECORD CLIMATOLOGY STARTING ON  16.00/1904 COVERING   366.00 DAYS
+C
+switch ( Linux )
+endsw
+C
+C --- Output.
+C
+mv fort.10 chl.b
+mv fort.10A chl.a
+cp chl.b /home/awallcraft/hycom/GOMb0.08/force/seawifs/chl.b
+cp chl.a /home/awallcraft/hycom/GOMb0.08/force/seawifs/chl.a
+C
+C --- Delete all files.
+C

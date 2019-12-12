@@ -1,0 +1,3 @@
+grep --color=auto -v [A-Z] rivers_allm.txt
+grep --color=auto -v ^ *$
+cut -c 41-

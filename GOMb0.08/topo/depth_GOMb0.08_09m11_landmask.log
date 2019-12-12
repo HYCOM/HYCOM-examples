@@ -1,0 +1,32 @@
+Linux koehr06 3.10.0-957.12.2.el7.x86_64 #1 SMP Fri Apr 19 21:09:07 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+/p/work1/abozec/HYCOM-examples/GOMb0.08/datasets/topo
+
+xcspmd: idm,jdm =  263  193
+
+old header:
+depth_GLBb0.08_09m11 subregioned to GOMb0.08 via isuba_topog                   
+i/jdm = 4500 3298; plon,plat range = 74.12003 434.12000   -78.64000 89.97772   
+Filled single-width inlets and (B&C grid) enclosed seas except the Black Sea.  
+Clipped to range:    5.00 m to 11000.00 m. Compatible with CICE.               
+Topography mods to Faroe Bank Channel. Fixed Yenisei River. depth_11 coastline.
+min,max depth =      5.0000000  6726.5087891
+ 
+ new header:
+depth_GLBb0.08_09m11 subregioned to GOMb0.08 via isuba_topog                   
+i/jdm = 4500 3298; plon,plat range = 74.12003 434.12000   -78.64000 89.97772   
+Filled single-width inlets and (B&C grid) enclosed seas except the Black Sea.  
+Clipped to range:    5.00 m to 11000.00 m. Compatible with CICE.               
+landmask N and E edges                                                         
+ 
+ larctic =  F
+ 
+fill subregion:   125  128    1    4
+fill subregion:   247  251    1    2
+fill subregion:   216  263  193  193
+fill subregion:   263  263    1  193
+fill subregion:   262  262  106  116
+fill subregion:   260  262   94   95
+fill subregion:   262  262   48   48
+fill subregion:   262  262   32   33
+min,max depth =      5.00000  6726.50879
+ 

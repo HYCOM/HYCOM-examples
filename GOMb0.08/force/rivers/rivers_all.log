@@ -1,0 +1,2 @@
+/home/awallcraft/hycom/ALL/bin/hycom_rivers -98 -80 18 32
+/bin/cp rivers_all.txt rivers_allm.txt

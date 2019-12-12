@@ -1,0 +1,50 @@
+# --- OS is operating system of machine
+# --- R  is region name.
+# --- V  is source code version number.
+# --- T  is topography number.
+# --- K  is number of layers.
+# --- E  is expt number (NNN).
+# --- X  is expt number (NN.N).
+# --- P  is primary path.
+# --- D  is permanent directory.
+# --- S  is scratch directory, must not be the permanent directory.
+# --- DS is the datasets directory.
+# --- N  is the name of the atmospheric forcing (PRE-processing).
+# --- MAKE_FORCE is logical for creating forcing at run time.
+#
+setenv OS HPE
+setenv R  GOMb0.08
+setenv V  2.3.01
+setenv T  07
+setenv K  41 
+setenv E  010
+setenv X  01.0
+setenv P  HYCOM-examples/GOMb0.08/expt_01.0/data
+setenv D  /p/home/abozec/HYCOM-examples/GOMb0.08/expt_01.0/data
+setenv S  /p/work1/abozec/HYCOM-examples/GOMb0.08/expt_01.0/data/
+setenv DS /p/work1/abozec/HYCOM-examples/GOMb0.08/expt_01.0/../datasets
+setenv N  cfsr_gom
+setenv W  /p/work1/abozec/HYCOM-examples/datasets/CFSR_GOM 
+setenv MAKE_FORCE 0
+
+# --- ARCHIVE is logical for archive transfer to Newton.
+# --- QSUBMIT is local submit command.
+setenv ARCHIVE 0 
+#setenv QSUBMIT qsub
+setenv QSUBMIT ~wallcraf/bin/q_navo
+
+# --- mnsqa  is logical for postproc mean and std deviation arch.
+# --- mnsqe  is logical for postproc mean and std deviation arche.
+# --- statm  is logical for postproc basin-wide statistics from daily means.
+# --- plots  is logical for postproc plots.
+# --- transp is logical for postproc sample transports.
+# --- data2d is logical for postproc data2d extraction.
+# --- netcdf is logical for postproc conversion to netCDF.
+#
+setenv mnsqa 1
+setenv mnsqe 0
+setenv statm 1
+setenv plots 0
+setenv transp 0
+setenv data2d 0
+setenv netcdf 1 

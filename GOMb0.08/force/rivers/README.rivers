@@ -1,0 +1,18 @@
+How to generate rivers files:
+
+a) Edit and run rivers_all.csh to create a list of all rivers in the 
+   specified domain.
+b) Edit the resulting rivers_allm.txt to select the ones you want.
+c) Run rivers_ij.csh to create rivers_ij.txt, rivers_lonlat.txt and 
+   rivers_names.txt.
+d) Run rivers_tr.csh to create rivers_tr.txt
+e) Edit rivers_07.csh (for topo number 07) to include the values
+   from rivers_names.txt, rivers_ij.txt, and rivers_tr.txt.  Also
+   choose how much smoothing to do.
+f) Run rivers_07.csh, but note that river mouths must be next to land
+   and the script will only move them the distance set by MAXDIST.
+g) If any river gives an error, manually reposition it next to land
+   and rerun rivers_07.csh.
+h) Plot the result using ../../plot_07/rivers_mon.IN
+i) If any river is out of place, manually reposition it and rerun 
+   rivers_07.csh.

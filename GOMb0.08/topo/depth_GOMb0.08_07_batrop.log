@@ -1,0 +1,22 @@
+cd ~/hycom/GOMb0.08/topo
+echo \033]0;/home/awallcraft/hycom/GOMb0.08/topo\007/home/awallcraft/hycom/GOMb0.08/topo
+]0;/home/awallcraft/hycom/GOMb0.08/topo/home/awallcraft/hycom/GOMb0.08/topo
+setenv FOR051 depth_GOMb0.08_07.b
+setenv FOR051A depth_GOMb0.08_07.a
+setenv FOR061 depth_GOMb0.08_07_batrop.b
+setenv FOR061A depth_GOMb0.08_07_batrop.a
+../../ALL/topo/src/topo_batrop
+
+xcspmd: idm,jdm =  263  193
+
+pscx:  min,max =      7547.12842     8455.80566
+pscy:  min,max =      7547.12842     8455.80566
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 9x; land from 5x;                            
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Filled single-width inlets and 1-point seas.                                   
+Re-merged with depth_GLBb0.08_09m11 near open boundaries.                      
+min,max depth =     2.00000  6710.49268
+gsp:  min,max =      4.429   256.521
+cfl:  min,max =     23.164  1295.165
+

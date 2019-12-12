@@ -1,0 +1,39 @@
+set time=1
+uname -a
+Linux dhcp212203.coaps.fsu.edu 4.16.11-100.fc26.x86_64 #1 SMP Tue May 22 20:02:12 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+cd ~/hycom/GOMb0.08/topo
+echo \033]0;/home/awallcraft/hycom/GOMb0.08/topo\007/home/awallcraft/hycom/GOMb0.08/topo
+]0;/home/awallcraft/hycom/GOMb0.08/topo/home/awallcraft/hycom/GOMb0.08/topo
+/bin/rm: No match.
+setenv FOR051 fort.51
+setenv FOR051A fort.51A
+setenv FOR061 fort.61
+setenv FOR061A fort.61A
+/bin/ln -s ./depth_GOMb0.08_04.b fort.51
+/bin/ln -s ./depth_GOMb0.08_04.a fort.51A
+/home/awallcraft/hycom/ALL/topo/src/topo_landfill
+
+xcspmd: idm,jdm =  263  193
+
+old header:
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 9x; land from 5x;                            
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Merged with depth_GLBb0.08_11 near open boundaries.                            
+Filled single-width inlets and 1-point seas.                                   
+min,max depth =      2.00000  6673.12207
+
+ new header:
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 9x; land from 5x;                            
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Merged with depth_GLBb0.08_11 near open boundaries.                            
+Filled single-width inlets and 1-point seas.                                   
+
+ larctic =  F
+
+min,max depth =      2.00000  6673.12207
+
+/bin/mv fort.61 ./depth_GOMb0.08_04check.b
+/bin/mv fort.61A ./depth_GOMb0.08_04check.a
+/bin/rm -f fort.51 fort.51A

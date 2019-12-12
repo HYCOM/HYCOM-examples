@@ -1,0 +1,43 @@
+1)    How to create a restart file from the GLBb0.08 suitable for GOMb0.08 
+
+To make the subregion simulation is as close as possible from the global one, 
+it is better to start from a global simulation ocean state instead of from rest. 
+In this example, we want to run the GOMb0.08 from year 1994 to 2015 nested in a 
+12-month climatology of the 1994-2015 HYCOM reanalysis. So we create a restart file 
+for GOMb0.08 derived from January 1994 HYCOM GLBb0.08.  A monthly mean initial state 
+isn’t the best option, but it is available on the dataserver.  A daily mean archive 
+would be better, and a snapshot archive (an archv file) would be best.  Note that a 
+snapshot archive can be extracted from a restart file if you have one for the outer model.
+
+To create the restart file:
+
+a- Download the HYCOM reanalysis for January 1994 (see HYCOM-examples/datasets/get_datasets.csh)
+
+b- Go to GLBb0.08/subregion and edit subregion_jan1.csh. Note that the subregion topography 
+is 07 and not 09m11s to match GOMb0.08 bathymetry. We then produce 
+GOMb0.08/datasets/subregion/archm.1994_01.[ab]
+
+To convert this archive file into a restart file using 
+~/HYCOM-tools/archive/src/archv2restart.f, an existing restart file is required.  
+If none is available, use the climatological relax files produce in GOMb0.08/relax and run
+without forcing for 1 day to create a restart (see GOMb0.08/expt_01.0). Once a restart 
+is available,
+
+c- Go to GOMb0.08/archive and edit archv2restart_start.csh to produce restart_094a.[ab]. 
+(Note that the restart template is restart_001b.a).
+
+2)    Generate a Montgomery potential offset
+
+When HYCOM is run with sshflg=2 the Montgomery potential is offset so that montg1 in an 
+archive file represents steric SSH.  This makes tidal analysis easier since non-steric 
+SSH (including tides) is srfhgt-montg1. To create this offset, run the model for 1 to 
+5 years with sshflg=0 (see GOMb0.08/expt_01.1/). Use or produce the yearly or multi-year 
+mean archive of the simulation (Note that the mean is done automatically if mnsqa is set 
+to 1 in GOMb0.08/expt_01.1/EXPT.src). Then go to GOMb0.08/archive and edit 
+data2d_archm_montg.csh to produce GOMb0.08/datasets/relax/SSH/relax_montg_011_1994.[ab].
+
+To use this new file in your next experiment (see GOMb0.08/expt_01.2), set blkdat variable 
+sshflg to 2. In expt_01.2, variable montg1/g has become the steric-SSH and (ssh-montg1)/g 
+the non-steric SSH.
+
+

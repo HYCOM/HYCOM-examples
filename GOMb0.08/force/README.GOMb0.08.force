@@ -1,0 +1,18 @@
+Invariants forcing files are available for this configuration on the HYCOM server at:
+ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/force_offset.tar.gz
+ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/force_rivers.tar.gz
+ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/force_seawifs.tar.gz
+
+All of them can be recreated with the scripts available in GOMb0.08/force/offset, 
+GOMb0.08/force/rivers and GOMb0.08/force/seawifs. N.B. the seawifs scripts requires the 
+download of a chlorophyll observation file, see ~/HYCOM-examples/datasets/get_datasets.csh.
+For all scripts, edit the paths and run the scripts. 
+
+In this example, we provide CFSR and CFSv2 forcing from the HYCOM server but subregioned to 
+an extended Gulf of Mexico region. The interpolation to the GOMb0.08 domain is done 
+on-the-fly when running expt_01.1 or expt_01.2 with MAKE_FORCE = 1 in 
+GOMb0.08/expt_01.1/EXPT.src. 
+See ~/HYCOM-examples/datasets/get_datasets.tar.gz to download these files (CFSR_GOM.tar.gz 
+(1994 to 2010) and CFSv2_GOM.tar.gz (2011-2018)).
+
+

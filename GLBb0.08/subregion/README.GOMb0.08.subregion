@@ -1,0 +1,38 @@
+In this examples, the nest files are created from the monthly global HYCOM reanalysis
+(https://www.hycom.org/dataserver/gofs-3pt1/reanalysis) files available on the HYCOM 
+server (see ~/HYCOM-examples/datasets/get_datasets.csh) and necessitate the grid and 
+bathymetry of GLBb0.08; see ~/HYCOM-examples/GLBb0.08/datasets/get_datasets.csh).
+
+If you do not want to re-create the nest files, download them directly at: 
+ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/subregion.tar.gz
+
+
+The GOMb0.08 configuration is a sub-region of GLBb0.08 at the same resolution, and this 
+section illustrates how to nest a subregion in a larger HYCOM model region (Note that 
+this example is also valid for nesting to any finer horizontal resolution). 
+
+The GOMb0.08 HYCOM model does not "know" about the GLBb0.08 domain. It expects a sequence 
+of GOMb0.08  input archive files to supply the data needed for the boundary conditions.  
+In fact, there are two distinct sets of boundary conditions: 
+a) relaxation to T/S/p/u/v in a buffer zone, and  b) application of depth averaged flow 
+at the open boundary. Both are input from archive files, however T/S/p/u/v is only 
+available from full 3-D archive files and depth averaged flow is also available from 
+surface archive files. So, archive input for depth averaged flow could be more frequent 
+than for T/S/p/u/v.
+
+The nested domain must be (the same resolution as or) finer than the original. Don't forget 
+to allow for the fact that the buffer zone (typically at least 10 coarse grid points 
+defined by relax/010/nest_rmu.[ab]) should probably be outside the region of high interest.
+
+To facilitate the interpolation from the coarser to the finer domain, we first create an 
+index map file between the 2 domains. In ~HYCOM-examples/GLBb0.08/subregion, edit gmapi.csh 
+and produce GOMb0.08/datasets/topo/regional.gmapi_GLBb0.08.[ab]. 
+Then create the monthly nest files interpolated on the sub-region grid by editing the 
+different paths of nest.csh and running it. Note that the bathymetry used to produce the 
+nest files is the one with the same mask as GLBb0.08 over the region (i.e. 
+depth_gomb0.08_09m11s.[ab]). You should now have 12 nest files in your scratch: 
+GOMb0.08/datasets/subregion/archm.1994_??_2015_??.[ab]
+To be recognized by HYCOM, these files will be copied in your scratch 
+GOMb0.08/expt_01.1/data/nest and renamed by GOMb0.08/expt_01.1/011_nest_link.csh in 
+GOMb0.08/expt_01.1/011.csh to fit the time period you are running. 
+

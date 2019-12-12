@@ -1,0 +1,230 @@
+setenv DS ~/hycom/GOMb0.08/topo
+setenv D /p/home/wallcraf/hycom/GOMb0.08/topo/partit/07
+setenv T `echo $cwd | awk -f depth.awk`
+awk -f depth.awk
+echo /p/home/wallcraf/hycom/GOMb0.08/topo/partit/07
+setenv TV `echo ${T} | cut -d"_" -f 3-`
+cut -d_ -f 3-
+echo depth_GOMb0.08_07
+cd /p/home/wallcraf/hycom/GOMb0.08/topo/partit/07
+echo \033]0;gaffney07: /p/home/wallcraf/hycom/GOMb0.08/topo/partit/07\007/p/home/wallcraf/hycom/GOMb0.08/topo/partit/07
+]0;gaffney07: /p/home/wallcraf/hycom/GOMb0.08/topo/partit/07/p/home/wallcraf/hycom/GOMb0.08/topo/partit/07
+/bin/rm -f regional.grid.a regional.grid.b
+ln -s /p/home/wallcraf/hycom/GOMb0.08/topo/regional.grid.a .
+ln -s /p/home/wallcraf/hycom/GOMb0.08/topo/regional.grid.b .
+ln -s /p/home/wallcraf/hycom/GOMb0.08/topo/partit/07/xbathy.pal .
+ln: failed to create symbolic link ‘./xbathy.pal’: File exists
+setenv FOR021 fort.21
+setenv FOR051 /p/home/wallcraf/hycom/GOMb0.08/topo/depth_GOMb0.08_07.b
+setenv FOR051A /p/home/wallcraf/hycom/GOMb0.08/topo/depth_GOMb0.08_07.a
+ln -s S04/patch.input_016 depth_GOMb0.08_07.016s
+ln -s S06/patch.input_024 depth_GOMb0.08_07.024s
+ln -s S06/patch.input_030 depth_GOMb0.08_07.030s
+ln -s S08/patch.input_047 depth_GOMb0.08_07.047s
+ln -s S09/patch.input_062 depth_GOMb0.08_07.062s
+ln -s S13/patch.input_096 depth_GOMb0.08_07.096s
+ln -s S12/patch.input_122 depth_GOMb0.08_07.122s
+foreach f ( depth_GOMb0.08_07.[0-9]??s )
+cp depth_GOMb0.08_07.016s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 9x; land from 5x;                            
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Filled single-width inlets and 1-point seas.                                   
+Re-merged with depth_GLBb0.08_09m11 near open boundaries.                      
+min,max depth =     2.00000  6710.49268
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15256
+             SEA POINTS =        35503
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_07.016s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_07.024s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 9x; land from 5x;                            
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Filled single-width inlets and 1-point seas.                                   
+Re-merged with depth_GLBb0.08_09m11 near open boundaries.                      
+min,max depth =     2.00000  6710.49268
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15256
+             SEA POINTS =        35503
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_07.024s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_07.030s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 9x; land from 5x;                            
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Filled single-width inlets and 1-point seas.                                   
+Re-merged with depth_GLBb0.08_09m11 near open boundaries.                      
+min,max depth =     2.00000  6710.49268
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15256
+             SEA POINTS =        35503
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_07.030s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_07.047s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 9x; land from 5x;                            
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Filled single-width inlets and 1-point seas.                                   
+Re-merged with depth_GLBb0.08_09m11 near open boundaries.                      
+min,max depth =     2.00000  6710.49268
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15256
+             SEA POINTS =        35503
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_07.047s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_07.062s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 9x; land from 5x;                            
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Filled single-width inlets and 1-point seas.                                   
+Re-merged with depth_GLBb0.08_09m11 near open boundaries.                      
+min,max depth =     2.00000  6710.49268
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15256
+             SEA POINTS =        35503
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_07.062s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_07.096s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 9x; land from 5x;                            
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Filled single-width inlets and 1-point seas.                                   
+Re-merged with depth_GLBb0.08_09m11 near open boundaries.                      
+min,max depth =     2.00000  6710.49268
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15256
+             SEA POINTS =        35503
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_07.096s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_07.122s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 9x; land from 5x;                            
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Filled single-width inlets and 1-point seas.                                   
+Re-merged with depth_GLBb0.08_09m11 near open boundaries.                      
+min,max depth =     2.00000  6710.49268
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15256
+             SEA POINTS =        35503
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_07.122s.ppm
+/bin/rm -f fort.21
+end

@@ -1,0 +1,89 @@
+setenv DS ~/hycom/GOMb0.08/topo
+setenv T `echo $cwd | awk -f depth.awk`
+awk -f depth.awk
+echo /p/home/wallcraf/hycom/GOMb0.08/topo/partit/07
+setenv TV `echo ${T} | cut -d"_" -f 3-`
+cut -d_ -f 3-
+echo depth_GOMb0.08_07
+cd /p/home/wallcraf/hycom/GOMb0.08/topo/partit/07
+echo \033]0;gaffney07: /p/home/wallcraf/hycom/GOMb0.08/topo/partit/07\007/p/home/wallcraf/hycom/GOMb0.08/topo/partit/07
+]0;gaffney07: /p/home/wallcraf/hycom/GOMb0.08/topo/partit/07/p/home/wallcraf/hycom/GOMb0.08/topo/partit/07
+setenv FOR011 fort.11
+setenv FOR021 fort.21
+foreach f ( depth_GOMb0.08_07.[0-9]??s )
+cp depth_GOMb0.08_07.016s fort.21
+echo 8 1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit_resize
+mv fort.11 depth_GOMb0.08_07.016s8
+/bin/rm -f fort.21
+diff -biw depth_GOMb0.08_07.016s depth_GOMb0.08_07.016s8
+2c2
+<     16     4     4   263   193    66    49     0     445    3234    2257
+---
+>     16     4     4   263   193    68    49     0     445    3234    2257
+cp depth_GOMb0.08_07.016s8 ../
+end
+cp depth_GOMb0.08_07.024s fort.21
+echo 8 1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit_resize
+mv fort.11 depth_GOMb0.08_07.024s8
+/bin/rm -f fort.21
+diff -biw depth_GOMb0.08_07.024s depth_GOMb0.08_07.024s8
+cp depth_GOMb0.08_07.024s8 ../
+end
+cp depth_GOMb0.08_07.030s fort.21
+echo 8 1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit_resize
+mv fort.11 depth_GOMb0.08_07.030s8
+/bin/rm -f fort.21
+diff -biw depth_GOMb0.08_07.030s depth_GOMb0.08_07.030s8
+cp depth_GOMb0.08_07.030s8 ../
+end
+cp depth_GOMb0.08_07.047s fort.21
+echo 8 1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit_resize
+mv fort.11 depth_GOMb0.08_07.047s8
+/bin/rm -f fort.21
+diff -biw depth_GOMb0.08_07.047s depth_GOMb0.08_07.047s8
+2c2
+<     47     8     6   263   193    33    33     0       1    1089     768
+---
+>     47     8     6   263   193    36    33     0       1    1089     768
+cp depth_GOMb0.08_07.047s8 ../
+end
+cp depth_GOMb0.08_07.062s fort.21
+echo 8 1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit_resize
+mv fort.11 depth_GOMb0.08_07.062s8
+/bin/rm -f fort.21
+diff -biw depth_GOMb0.08_07.062s depth_GOMb0.08_07.062s8
+2c2
+<     62     9     7   263   193    30    28     0       0     840     582
+---
+>     62     9     7   263   193    36    28     0       0     840     582
+cp depth_GOMb0.08_07.062s8 ../
+end
+cp depth_GOMb0.08_07.096s fort.21
+echo 8 1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit_resize
+mv fort.11 depth_GOMb0.08_07.096s8
+/bin/rm -f fort.21
+diff -biw depth_GOMb0.08_07.096s depth_GOMb0.08_07.096s8
+2c2
+<     96    13     8   263   193    21    25     0       0     525     376
+---
+>     96    13     8   263   193    28    25     0       0     525     376
+cp depth_GOMb0.08_07.096s8 ../
+end
+cp depth_GOMb0.08_07.122s fort.21
+echo 8 1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit_resize
+mv fort.11 depth_GOMb0.08_07.122s8
+/bin/rm -f fort.21
+diff -biw depth_GOMb0.08_07.122s depth_GOMb0.08_07.122s8
+2c2
+<    122    12    11   263   193    22    18     0       0     396     296
+---
+>    122    12    11   263   193    28    18     0       0     396     296
+cp depth_GOMb0.08_07.122s8 ../
+end

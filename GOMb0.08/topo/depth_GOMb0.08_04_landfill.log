@@ -1,0 +1,75 @@
+Linux koehr05 3.10.0-957.12.2.el7.x86_64 #1 SMP Fri Apr 19 21:09:07 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+/p/work1/abozec/HYCOM-examples/GOMb0.08/datasets/topo
+
+xcspmd: idm,jdm =  263  193
+
+old header:
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 17x; land from 9x;                           
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Merged with depth_GLBb0.08_11 near open boundaries.                            
+landmask Gulf of Mexico Filled all seas smaller than       10000 Filled all sea
+min,max depth =      2.00000  6673.12207
+ 
+ new header:
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 17x; land from 9x;                           
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Merged with depth_GLBb0.08_11 near open boundaries.                            
+Filled single-width inlets and 1-point seas.                                   
+ 
+ larctic =  F
+ 
+ dh(   85,    9) set to zero (3 land nieghbours)
+ dh(  140,   45) set to zero (3 land nieghbours)
+ dh(  136,   46) set to zero (3 land nieghbours)
+ dh(  188,   47) set to zero (3 land nieghbours)
+ dh(  229,   49) set to zero (3 land nieghbours)
+ dh(  170,   51) set to zero (3 land nieghbours)
+ dh(  169,   52) set to zero (3 land nieghbours)
+ dh(  171,   54) set to zero (3 land nieghbours)
+ dh(  211,   55) set to zero (3 land nieghbours)
+ dh(  205,   60) set to zero (3 land nieghbours)
+ dh(  232,   61) set to zero (3 land nieghbours)
+ dh(  231,   62) set to zero (3 land nieghbours)
+ dh(  231,   63) set to zero (3 land nieghbours)
+ dh(  227,   65) set to zero (3 land nieghbours)
+ dh(  221,   66) set to zero (3 land nieghbours)
+ dh(  226,   66) set to zero (3 land nieghbours)
+ dh(  215,   96) set to zero (3 land nieghbours)
+ dh(    7,   99) set to zero (3 land nieghbours)
+ dh(  199,  120) set to zero (3 land nieghbours)
+ dh(  200,  120) set to zero (3 land nieghbours)
+ dh(    7,  121) set to zero (3 land nieghbours)
+ dh(    9,  127) set to zero (3 land nieghbours)
+ dh(   10,  130) set to zero (3 land nieghbours)
+ dh(   13,  136) set to zero (3 land nieghbours)
+ dh(   16,  141) set to zero (3 land nieghbours)
+ dh(   17,  141) set to zero (3 land nieghbours)
+ dh(   20,  141) set to zero (3 land nieghbours)
+ dh(   21,  142) set to zero (3 land nieghbours)
+ dh(   23,  145) set to zero (3 land nieghbours)
+ dh(  192,  149) set to zero (3 land nieghbours)
+ dh(  109,  151) set to zero (3 land nieghbours)
+ dh(   37,  152) set to zero (3 land nieghbours)
+ dh(   93,  152) set to zero (3 land nieghbours)
+ dh(   95,  153) set to zero (3 land nieghbours)
+ dh(   97,  153) set to zero (3 land nieghbours)
+ dh(  101,  154) set to zero (3 land nieghbours)
+ dh(   39,  158) set to zero (3 land nieghbours)
+ dh(  170,  163) set to zero (3 land nieghbours)
+ dh(  104,  164) set to zero (3 land nieghbours)
+ dh(  109,  164) set to zero (3 land nieghbours)
+ dh(  154,  168) set to zero (3 land nieghbours)
+ dh(  128,  169) set to zero (3 land nieghbours)
+ dh(  114,  170) set to zero (3 land nieghbours)
+ dh(  122,  170) set to zero (3 land nieghbours)
+ dh(  136,  170) set to zero (3 land nieghbours)
+ dh(  126,  174) set to zero (3 land nieghbours)
+ dh(  225,   66) set to zero (3 land nieghbours)
+ dh(  200,  119) set to zero (3 land nieghbours)
+ dh(   97,  152) set to zero (3 land nieghbours)
+ dh(  153,  168) set to zero (3 land nieghbours)
+ dh(  200,  118) set to zero (3 land nieghbours)
+min,max depth =      2.00000  6673.12207
+ 

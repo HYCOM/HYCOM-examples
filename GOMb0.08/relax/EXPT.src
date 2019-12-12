@@ -1,0 +1,19 @@
+# --- TOOLS is path to tools directory
+# --- SP    is scratch prefix
+# --- R     is region identifier 
+# --- DSR   is path to non specific domain datasets
+# --- DS    is path to specific domain datasets
+#
+setenv TOOLS ~/HYCOM-tools
+setenv SP  /p/work1/${user}
+setenv R   GOMb0.08
+setenv DSR ${SP}/HYCOM-examples/datasets
+setenv DS  ${SP}/HYCOM-examples/${R}/datasets
+
+# --- E is experiment number
+# --- T is topography number
+setenv IDM  `grep idm ${DS}/topo/regional.grid.b | awk '{print $1}'`
+setenv JDM  `grep jdm ${DS}/topo/regional.grid.b | awk '{print $1}'`
+setenv KDM  41
+setenv E    010
+setenv T    07 

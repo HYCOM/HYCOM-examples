@@ -1,0 +1,57 @@
+Relax and invariants files are available for this configuration on the HYCOM server at:
+ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/relax_010.tar.gz
+Most of them can be recreated with the scripts available in this example.
+
+To create the initial conditions of your run, as well as the relaxation mask for the
+nest, go to GOMB0.08/relax/ and edit EXPT.src to your need. Here, we defined the dataset
+path as DS and the HYCOM-tools path as TOOLS. 
+
+The initial condition files (relax_tem.[ab], relax_sal.[ab], and relax_int.[ab]) are 
+12-month file of the state of the ocean based on a climatology of your choice and interpolated
+horizontally and vertically on the grid of your domain.  The process is divided in two 
+phases: First interpolate (WOA13_HYCOM or PHC3_HYCOM see 
+~/HYCOM-examples/datasets/get_datasets.csh to download) climatology to the HYCOM horizontal
+grid but keeping the original z-grid in the vertical (see GOMb0.08/relax/z_woa13.csh and
+GOMb0.08/relax/z_levitus.csh).  The interpolated climatology is defined at all grid 
+points (including land and below the ocean floor),  and the output potential density can 
+be sigma0 or sigma2, but note that we now typically leave the profile unstable (ICTYPE=4) 
+and use the resulting salinity and potential temperature fields in the next step. 
+
+Then convert to the hybrid climatology required for a particular HYCOM simulation 
+(see GOMb0.08/relax/relax.csh).  The region and simulation specific environment variables 
+are in GOMb0.08/relax/EXPT.src.  The required input file, GOMb0.08/relax/blkdat.input, 
+can be created from GOMb0.08/expt_01.0/blkdat.input. The output data sets are climatological
+interface depth (relax_int.[ab]), potential temperature (relax_tem.[ab]) and salinity 
+(relax_sal.[ab]) fields for the specified set of isopycnal layers and the specified set 
+of minimum near-surface layer thicknesses.
+
+To create spatially varying velocity diffusion (veldf2.[ab]), edit and run the veldf2.csh 
+to produce veldf2_20.[ab]; link these files to veldf2.[ab]. Additional scripts such as 
+iso_sigma.csh (spacially varying target density, iso_sigma.[ab], to be produced before 
+running relax.csh if needed), sefold.csh (spatially varying SSS relaxation e-folding time 
+files, sefold.[ab]), tbaric.csh (thermobaricity correction files, tbaric.[ab]) and 
+spatially varying thickness diffusion (thkdf4.[ab]) are available in this example but 
+not used.
+
+A 2-D relaxation mask is also required for any HYCOM simulation that uses lateral boundary
+nudging or nesting.  It is typically zero everywhere except the boundary regions where 
+relaxation is to be applied.  In the boundary regions it is the relaxation scale factor 
+(1/seconds).  The program ~/TOOLS/relax/src/rmu_linear.f can be used to specify the 
+boundary relaxation zones, see GOMb0.08/relax/nest_rmu_linear.csh.  Input is up to 99 
+individual patches and the associated e-folding time in days (which is converted internally 
+to 1/e-folding-time-in-seconds for assignment to rmu). Similarly to the previous scripts, 
+edit nest_rmu_linear.csh and run it to produce DS/relax/010/nest_rmu.[ab]. It is easy to 
+get the patches wrong, so nest_rmu_invday.[ab] is also produced with the e-folding time 
+in days. This can be plotted to confirm the relaxation zones.
+
+For this particular example, we also provided the script to create spatially varying 
+bottom drag (cb.[ab]) and the surface salinity limiter (relax.sssrmx.[ab]). See 
+GOMb0.08/relax/DRAG and GOMb0.08/relax/SSSRMX, edit the respective scripts and run them to 
+get cb_07_10mm.[ab] and sssrmx_m0p5psu.[ab] in DS/relax/DRAG and DS/relax/SSSRMX, respectively.
+These files are also available on the HYCOM server at: 
+ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_DRAG.tar.gz
+ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_SSSRMX.tar.gz
+ 
+
+
+

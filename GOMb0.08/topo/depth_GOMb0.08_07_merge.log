@@ -1,0 +1,98 @@
+/p/work1/abozec/HYCOM-examples/GOMb0.08/datasets/topo
+
+xcspmd: idm,jdm =  263  193
+
+ &MERGE
+ CTITLE  = depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 0.01 deg. resolution; boxsmoothed 9x; land 
+ from 5x;                            lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         Filled single-wid
+ th inlets and 1-point seas.                                   Re-merged with depth_GLBb0.08_09m11 near open boundaries.             
+          ,
+ IF      = 2*129,         252, 2*241,         230,         252,         241, 2*201, 989*0,
+ IL      = 3*261,         251,         250,         240,         261,         251, 2*261, 989*0,
+ JF      =           2,          12, 2*3, 2*60, 2*121,         183,         172, 989*0,
+ JL      =          11,          22, 2*24, 2*116, 3*192,         182, 989*0,
+ SCALE   =   1.000000    ,  -9.000000    ,   1.000000    ,  -9.000000    ,   1.000000    ,  -9.000000    ,   1.000000    ,
+   -9.000000    ,   1.000000    ,  -9.000000    , 989*0.0000000E+00  ,
+ BOXSCL  = 6*1.000000       , 2*0.0000000E+00  , 4*1.000000       ,  0.0000000E+00, 2*1.000000       ,  0.0000000E+00,
+  4*1.000000       ,  0.0000000E+00, 2*1.000000       ,  0.0000000E+00, 4*1.000000       ,  0.0000000E+00,
+  2*1.000000       ,  0.0000000E+00, 4*1.000000       , 2*0.0000000E+00  , 2*1.000000       , 3956*0.0000000E+00  
+ /
+
+1st header:
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 17x; land from 9x;                           
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Merged with depth_GLBb0.08_11 near open boundaries.                            
+Filled single-width inlets and 1-point seas.                                   
+min,max depth =      2.00000  6673.12207
+
+2nd header:
+depth_GLBb0.08_09m11 subregioned to GOMb0.08 via isuba_topog                   
+i/jdm = 4500 3298; plon,plat range = 74.12003 434.12000   -78.64000 89.97772   
+Filled single-width inlets and (B&C grid) enclosed seas except the Black Sea.  
+Clipped to range:    5.00 m to 11000.00 m. Compatible with CICE.               
+landmask N and E edges                                                         
+min,max depth =      5.00000  6726.50879
+ scale> 0:          195           6   1.000000    
+ scale=-9:          195          17  0.5000000    
+ scale> 0:          256          13   1.000000    
+ scale=-9:          246          13  0.9000000    
+ scale> 0:          245          88   1.000000    
+ scale=-9:          235          88  0.5000000    
+ scale> 0:          256         156   1.000000    
+ scale=-9:          246         156  0.5000000    
+ scale> 0:          231         187   1.000000    
+ scale=-9:          231         177  0.5000000    
+i,j,dh,s,dh1,dh2 =  131    2  1286.044     1.000  1248.438  1286.044
+i,j,dh,s,dh1,dh2 =  131    3  1179.104     1.000  1147.495  1179.104
+i,j,dh,s,dh1,dh2 =  131    4   991.615     1.000   959.880   991.615
+i,j,dh,s,dh1,dh2 =  131    5   789.047     1.000   764.362   789.047
+i,j,dh,s,dh1,dh2 =  131    6   833.559     1.000   659.854   833.559
+i,j,dh,s,dh1,dh2 =  131    7   748.733     1.000   578.040   748.733
+i,j,dh,s,dh1,dh2 =  131    8   628.747     1.000   482.943   628.747
+i,j,dh,s,dh1,dh2 =  131    9   456.327     1.000   402.533   456.327
+i,j,dh,s,dh1,dh2 =  131   10   322.951     1.000   417.064   322.951
+i,j,dh,s,dh1,dh2 =  131   11   391.916     1.000   448.073   391.916
+i,j,dh,s,dh1,dh2 =  131   12   198.045     1.000   414.192   198.045
+i,j,dh,s,dh1,dh2 =  131   13     0.000     0.900********************
+i,j,dh,s,dh1,dh2 =  131   14     0.000     0.800********************
+i,j,dh,s,dh1,dh2 =  131   15     0.000     0.700********************
+i,j,dh,s,dh1,dh2 =  131   16     0.000     0.600********************
+i,j,dh,s,dh1,dh2 =  131   17     0.000     0.500********************
+i,j,dh,s,dh1,dh2 =  131   18     0.000     0.400********************
+i,j,dh,s,dh1,dh2 =  131   19     0.000     0.300********************
+i,j,dh,s,dh1,dh2 =  131   20     0.000     0.200********************
+i,j,dh,s,dh1,dh2 =  131   21    17.593     0.100    17.401    19.322
+i,j,dh,s,dh1,dh2 =  231   96   866.086     0.100   866.628   861.213
+i,j,dh,s,dh1,dh2 =  232   96   863.446     0.200   863.607   862.799
+i,j,dh,s,dh1,dh2 =  233   96   857.443     0.300   858.806   854.263
+i,j,dh,s,dh1,dh2 =  234   96   829.616     0.400   836.324   819.554
+i,j,dh,s,dh1,dh2 =  235   96   695.865     0.500   734.941   656.789
+i,j,dh,s,dh1,dh2 =  236   96   365.463     0.600   401.007   341.767
+i,j,dh,s,dh1,dh2 =  237   96    87.676     0.700    85.581    88.573
+i,j,dh,s,dh1,dh2 =  238   96    11.780     0.800    14.638    11.066
+i,j,dh,s,dh1,dh2 =  239   96     5.776     0.900     6.073     5.743
+i,j,dh,s,dh1,dh2 =  240   96     5.084     1.000     5.003     5.084
+i,j,dh,s,dh1,dh2 =  241   96     5.000     1.000     4.865     5.000
+i,j,dh,s,dh1,dh2 =  242   96     5.025     1.000     4.981     5.025
+i,j,dh,s,dh1,dh2 =  243   96     5.124     1.000     5.186     5.124
+i,j,dh,s,dh1,dh2 =  244   96     5.275     1.000     5.417     5.275
+i,j,dh,s,dh1,dh2 =  245   96     5.360     1.000     5.539     5.360
+i,j,dh,s,dh1,dh2 =  246   96     5.266     1.000     5.450     5.266
+i,j,dh,s,dh1,dh2 =  247   96     5.000     1.000     5.207     5.000
+i,j,dh,s,dh1,dh2 =  248   96     5.000     1.000     5.223     5.000
+i,j,dh,s,dh1,dh2 =  249   96     0.000     1.000********************
+i,j,dh,s,dh1,dh2 =  250   96     0.000     1.000********************
+
+single-width inlet check:
+
+WARNING - single-width inlets and/or 1-point seas exist
+
+ 
+depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog                 
+0.01 deg. resolution; boxsmoothed 9x; land from 5x;                            
+lon: -98.00 to -77.0000.  lat: 18.09165N to 31.96065N.                         
+Filled single-width inlets and 1-point seas.                                   
+Re-merged with depth_GLBb0.08_09m11 near open boundaries.                      
+min,max depth =     2.00000  6710.49268
+ 

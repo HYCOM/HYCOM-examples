@@ -1,0 +1,48 @@
+Topo and grid files are available for this configuration on the HYCOM server at:
+ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/topo.tar.gz.
+Most of them can be recreated with the scripts available in this example.
+
+To create the GOMb0.08 grid, use the regional.grid.csh script in GOMb0.08/topo. 
+Edit the dataset path (DS) and the HYCOM-tools path (TOOLS) then run the script. 
+
+It is advisable to make the sub-region bathymetry and coastline exactly consistent 
+with the coarser enclosing region, both on the open boundary and in the relaxation 
+buffer zone.  Everywhere else the bathymetry and coastline can be optimized for the 
+higher resolution.  For example, to create the GOMb0.08 bathymetry do the following:
+
+a) Generate the best possible fine grid bathymetry and coastline everywhere, in this 
+case GOMb0.08/datasets/topo/depth_GOMb0.08_04.[ab].
+
+b) Interpolate the coarse enclosing bathymetry to the nested region using 
+TOOLS/subregion/src/isub_topog. The script is GLBb0.08/subregion/depth_GOMb0.08_09m11s.csh, 
+and it produces GOMb0.08/datasets/topo/depth_GOMb0.08_09m11s.[ab].  
+N.B.: This bathymetry will be used to produce the nest files.
+
+c) Since the domain is one-way nested into a global domain, HYCOM requires that the last
+p-point in i and j to be land. To do that, use GOMb0.08/topo/depth_GOMb0.08_09m11_landmask.csh
+to produce GOMb0.08/datasets/topo/depth_GOMb0.08_09m11.[ab].  Adding these edge points as
+land may cause issues for other land points very close to the boundary, which are typically
+fixed by setting them to land as well.
+
+d) Merge the two bathymetries (04,09m11) using TOOLS/topo/src/topo_merge, which selects 
+the coarse depths and coastline in the buffer zone, a combination "near" the buffer zone, 
+and the fine depths and coastline everywhere else. The script is 
+GOMb0.08/topo/depth_GOMb0.08_07_merge.csh and it produces the final bathymetry: 
+GOMb0.08/datasets/topo/depth_GOMb0.08_07.[ab].  It is possible that one of the input
+bathymetries will need iterating (modifying) to get a good result near the open boundaries.
+
+e) Setup the open boundaries in ports.input (section 5C), and check their position by 
+running GOMb0.08/ports/011/ports_map.csh.  Do this now, because some port errors are best 
+fixed by modifying the land/sea boundary, and many of the subsequent files depend on the 
+final depth_GOMb0.08_07.[ab].
+
+
+Bathymetry procedure:
+
+09m11s is interpolated from GLBb0.08 09m11
+94m    is interpolated from GOMb0.01 04bs17m
+
+09m11  is from 09m11s       via depth_GOMb0.08_09m11_landmask.csh
+04s    is from 94m          via depth_GOMb0.08_04s_onesea_fill.csh
+04     is from 04s          via depth_GOMb0.08_04_landfill.csh
+07     is from 04 and 09m11 via depth_GOMb0.08_07_merge.csh

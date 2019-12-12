@@ -1,0 +1,74 @@
+1)    How to turn on the nest options in HYCOM
+
+Nesting options are turn on by setting the blkdat variable lbflag to 2 
+(Browning & Kreiss) or 4 (Flather) and the time frequency to update the 
+nest is handled by 2 blkdat input variables, 'bnstfq' and 'nestfq', set 
+in our examples to -30.5 for monthly mean archive files, see 
+GOMb0.08/expt_01.1/blkdat.input
+
+  -30.5   'bnstfq' = number of days between baro nesting archive input
+  -30.5   'nestfq' = number of days between 3-d  nesting archive input
+…
+      2      'lbflag' = lateral barotropic bndy flag (0=none, 1=port, 2=input)
+
+
+2)    How to set the location of the open-boundaries
+
+The location of barotropic boundaries must be specified in the file 
+GOMb0.08/expt_01.1/ports.input.  
+
+  1.1   'sports' = scale factor for nested velocity (typically 1.0)
+  6     'nports' = number of boundary port sections
+  3     'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+251     'ifport' = first i-index
+251     'ilport' = last  i-index (=ifport for east/west port)
+105     'jfport' = first j-index
+116     'jlport' = last  j-index (=jfport for north/south port)
+  2     'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+129     'ifport' = first i-index
+246     'ilport' = last  i-index (=ifport for east/west port)
+  2     'jfport' = first j-index
+  2     'jlport' = last  j-index (=jfport for north/south port)
+  3     'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+262     'ifport' = first i-index
+262     'ilport' = last  i-index (=ifport for east/west port)
+  6     'jfport' = first j-index
+ 24     'jlport' = last  j-index (=jfport for north/south port)
+  3     'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+251     'ifport' = first i-index
+251     'ilport' = last  i-index (=ifport for east/west port)
+ 60     'jfport' = first j-index
+ 84     'jlport' = last  j-index (=jfport for north/south port)
+  3     'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+262     'ifport' = first i-index
+262     'ilport' = last  i-index (=ifport for east/west port)
+121     'jfport' = first j-index
+192     'jlport' = last  j-index (=jfport for north/south port)
+  1     'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+226     'ifport' = first i-index
+261     'ilport' = last  i-index (=ifport for east/west port)
+193     'jfport' = first j-index
+193     'jlport' = last  j-index (=jfport for north/south port)
+
+The 1st line is sports, which specifies a scale factor to be applied to the 
+barotropic velocity on the open boundary.  It is optional (not present in most 
+existing ports.input files), with a default of 1.0 (no scaling). We are using 1.1 
+to get better agreement with Florida Current observed transport. This is for 6 
+open boundaries, 1 in the northern, 1 in the southern and 4 in the eastern edge 
+of the region rectangle.  These were initially positioned based on  
+GOMb0.08/datasets/topo/depth_GOMb0.08_07_map.log.  However this is showing the 
+p-grid (cell centers) but northern and southern boundaries are actually specified 
+on the v-grid (since v-velocity is normal to these boundaries), and similarly eastern 
+and western boundaries are specified on the u-grid.  Each boundary location is a 
+grid point just outside the model region.  Correctly positioned open boundaries 
+appear as *'s on the iu and iv maps printed in the model run .log file. You can also 
+check their position by running GOMb0.08/ports/011/ports_map.csh (Note that the 011 
+corresponds to the experiment number).  If the boundary locations are mis-specified 
+the model will stop and the iu and/or iv maps will contain 9's instead of *'s at the 
+locations that are in error.  Some errors (e.g. boundaries that are too short) can't 
+be detected by HYCOM, so always check the iu and iv maps when initially configuring 
+a nested domain.
+
+Note that the nesting buffer zone relaxation is completely independent of climatology buffer zone relaxation.  Both could be active in the same model run.  Nesting barotropic boundary conditions cannot be used in combination with port (lbflag=1), specified inflow/outflow forcing.
+
+
