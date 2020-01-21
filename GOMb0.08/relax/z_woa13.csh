@@ -54,7 +54,7 @@ C
 setenv CDF_TEMP tm${MM}.nc
 setenv CDF_SALN sm${MM}.nc
 C
-ln -s  $L/WOA13_TEMP_m${MM}.nc tm${MM}.nc  &
+ln -s  $L/WOA13_PTEMP_m${MM}.nc tm${MM}.nc  &
 ln -s  $L/WOA13_SALT_m${MM}.nc sm${MM}.nc  &
 C
 C --- grid to interpolate to
