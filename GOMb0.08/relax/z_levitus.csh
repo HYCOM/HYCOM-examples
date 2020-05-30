@@ -90,7 +90,7 @@ setenv FOR012A fort.12A
   KSIGMA =   2,
   INTERP =   1,
   ITEST  = 232,
-  JTEST  = 206,
+  JTEST  = 160,
   MONTH  = $MM,
  /
 E-o-D
