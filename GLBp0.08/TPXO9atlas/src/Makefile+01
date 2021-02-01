@@ -1,0 +1,41 @@
+# Makefile created by mkmf $Id: mkmf,v 4.18 2002/08/09 18:21:53 vb Exp $ 
+
+include ./template_pgf90
+
+
+.DEFAULT:
+	-touch $@
+all: calcSAL.x
+shsec.o: /u/home/arbic/apps/spherepack/sphpk3.1/shsec.f
+	$(FC) $(FFLAGS) -c	/u/home/arbic/apps/spherepack/sphpk3.1/shsec.f
+hrfft.o: /u/home/arbic/apps/spherepack/sphpk3.1/hrfft.f
+	$(FC) $(FFLAGS) -c	/u/home/arbic/apps/spherepack/sphpk3.1/hrfft.f
+sphcom.o: /u/home/arbic/apps/spherepack/sphpk3.1/sphcom.f
+	$(FC) $(FFLAGS) -c	/u/home/arbic/apps/spherepack/sphpk3.1/sphcom.f
+shaec.o: /u/home/arbic/apps/spherepack/sphpk3.1/shaec.f
+	$(FC) $(FFLAGS) -c	/u/home/arbic/apps/spherepack/sphpk3.1/shaec.f
+calcSAL.o: calcSAL.f
+	$(FC) $(FFLAGS) -c	calcSAL.f
+./hrfft.f: /u/home/arbic/apps/spherepack/sphpk3.1/hrfft.f
+	cp /u/home/arbic/apps/spherepack/sphpk3.1/hrfft.f .
+./shsec.f: /u/home/arbic/apps/spherepack/sphpk3.1/shsec.f
+	cp /u/home/arbic/apps/spherepack/sphpk3.1/shsec.f .
+./shaec.f: /u/home/arbic/apps/spherepack/sphpk3.1/shaec.f
+	cp /u/home/arbic/apps/spherepack/sphpk3.1/shaec.f .
+./sphcom.f: /u/home/arbic/apps/spherepack/sphpk3.1/sphcom.f
+	cp /u/home/arbic/apps/spherepack/sphpk3.1/sphcom.f .
+SRC = /u/home/arbic/apps/spherepack/sphpk3.1/shsec.f /u/home/arbic/apps/spherepack/sphpk3.1/hrfft.f /u/home/arbic/apps/spherepack/sphpk3.1/sphcom.f /u/home/arbic/apps/spherepack/sphpk3.1/shaec.f calcSAL.f
+OBJ = shsec.o hrfft.o sphcom.o shaec.o calcSAL.o
+OFF = /u/home/arbic/apps/spherepack/sphpk3.1/hrfft.f /u/home/arbic/apps/spherepack/sphpk3.1/shsec.f /u/home/arbic/apps/spherepack/sphpk3.1/shaec.f /u/home/arbic/apps/spherepack/sphpk3.1/sphcom.f
+clean: neat
+	-rm -f .cppdefs $(OBJ) calcSAL.x
+neat:
+	-rm -f $(TMPFILES)
+localize: $(OFF)
+	cp $(OFF) .
+TAGS: $(SRC)
+	etags $(SRC)
+tags: $(SRC)
+	ctags $(SRC)
+calcSAL.x: $(OBJ)
+	$(LD) $(OBJ) -o calcSAL.x $(LDFLAGS)

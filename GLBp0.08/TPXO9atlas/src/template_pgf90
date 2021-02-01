@@ -1,0 +1,5 @@
+#mkmf -t template -p $executable
+      FC = pgf90
+      LD = pgf90
+  FFLAGS = -g -r8 -fastsse -byteswapio -tp k8-64 -mcmodel=medium -Mnolarge_arrays -Mextend
+ LDFLAGS =  ${FFLAGS} 

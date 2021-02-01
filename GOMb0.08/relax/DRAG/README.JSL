@@ -1,0 +1,16 @@
+This drag scale field is based on the "JSL" approach:
+
+Jayne, S.R., St. Laurent, L.C., 2001. Parameterizing tidal dissipation over rough
+topography. Geophys. Res. Lett. 28, 811–814.
+
+JSL.[ab] is interpolated to GOMb0.08 using:
+
+GLBp0.08/subregion/jsl_GOMb0.08.csh
+
+Where the original field is based on the the GEBCO 30-second bathymetry and is zero coastwards of 1,000 m.
+
+GOMb0.08 scripts:
+
+JSL_lim24.csh            - minimum e-folding time of 1 day, zero above 10 days
+JSL_lim24_inv.csh        - convert from 1/s to e-folding time in hours (24-240)
+tidal.JSLH.07.lim24.csh  - rh, in m/s, for HYCOM

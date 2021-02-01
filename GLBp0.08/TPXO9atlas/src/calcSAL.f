@@ -1,0 +1,232 @@
+      program calcSAL
+
+!    note that the documentation for spherepack programs shaec.f, shsec.f
+!          along with the example program on page 33 of the spherepack2.0 
+!          manual helped guide the writing of this program
+
+!     set grid size with parameter statements
+
+      PARAMETER ( NI=4500, NJ=NI/2+1)  !0.08 degrees
+      PARAMETER (nnlat=NJ,nnlon=NI) 
+
+!     set saved and unsaved work space lengths in terms of nnlat, nnlon
+
+      parameter (nn15=nnlon+15)
+!      parameter (llsave=nnlat*(nnlat+1)+3*((nnlat-2)*(nnlat-1)+nn15))
+!      parameter (llwork=(nnlat+1)*(nnlon+3*nnlat)+nnlat*(2*nnlat+1))
+      parameter (l1use=nnlat,l2=(nnlat+1)/2)
+      parameter (llsave=2*nnlat*l2+3*((l1use-2)*(nnlat+nnlat-l1use-1))
+     &        /2+nnlon+15)
+      parameter (ldwork=nnlat*(nnlon+nnlon))
+      parameter (lshaec=llsave)
+      parameter (lshsec=llsave)
+
+!     dimension arrays
+
+      real*8 LOADNUMBERS(10000)
+
+      real*4 amp(ni,nj)
+      real*4 phase(ni,nj)
+      real*4 loadtide(ni,nj)
+
+      REAL*8 TIDEPAD(nnlon,nnlat)
+      real*8 tidepad2(nnlat,nnlon)
+      
+      real*8 loadtide2(nnlat,nnlon)
+
+      real*8 dwork(ldwork)
+      real*8 wshaec(llsave)
+      real*8 wshsec(llsave)
+      real*8 a(nnlat,nnlat)
+      real*8 b(nnlat,nnlat)
+
+      INTEGER ISTART(4), ICOUNT(4)
+
+      character*60,parameter :: infile = "loadnumbers_binary"
+
+!     define pi
+
+      pi=4.0*atan(1.0)
+
+!     read in loadnumbers
+
+      write(6,'(a,a)') 'reading ',trim(infile)
+      call flush(6)
+      open(10, file=infile, form='unformatted')
+      read(10) loadnumbers
+      close (10)
+
+!     read in amplitude and phase
+
+      write(6,'(a,a)') 'reading tide_AmPh.A'
+      call flush(6)
+      INQUIRE( IOLENGTH=MRECL) amp
+      open(10, file='tide_AmPh.A', form='unformatted', access="direct", RECL=MRECL)
+      read(10, rec=1) amp
+      read(10, rec=2) phase
+      close (10)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!     calculate loadtide for omegat=0 degrees:
+      write(6,'(a)') 'calculate loadtide for omegat=0 degrees:'
+      call flush(6)
+         
+         do j=1,NJ
+           do i=1,NI
+              if (amp(i,j) .gt. 1.0d10) then
+                tidepad(i,j)=0.0
+             else
+                tidepad(i,j)=amp(i,j)*cos((pi/180.0)*(0.0-phase(i,j)))
+             endif
+           enddo
+         enddo
+
+!     translate tidepad from geophysical coordinates (which use longitude
+!       and latitude, the latter measured from south to north pole) to
+!       tidepad2 in mathematical spherical coordinates (which use colatitude
+!       and longitude, the former measured from north to south pole)
+
+      do j=1,nnlon
+         do i=1,nnlat
+            tidepad2(i,j)=tidepad(j,nnlat+1-i)
+         enddo
+      enddo
+
+!
+! initialize spherepack routines
+!
+      call shaeci(nnlat,nnlon,wshaec,lshaec,dwork,ldwork,ierror)
+      if (ierror .ne. 0) print *, 'shaeci ierror = ',ierror
+      call shseci(nnlat,nnlon,wshsec,lshsec,dwork,ldwork,ierror)
+      if (ierror .ne. 0) print *, 'shseci ierror = ',ierror
+
+!  calculate spherical harmonics
+
+      call shaec(nnlat,nnlon,0,1,tidepad2,nnlat,nnlon,a,b,nnlat,  
+     &                 nnlat,wshaec,lshaec,dwork,ldwork,ierror)
+      if (ierror .ne. 0) print *, 'shaec ierror = ',ierror
+
+!  multiply the harmonics by the load numbers; note start at j=2 since
+!        j=1, i = 1 denotes P00; note set a(1,1)=b(1,1)=0 to eliminate
+!        possibility of nonzero mean
+
+      a(1,1)=0.0
+      b(1,1)=0.0
+
+      do j = 2,nnlat
+         do i = 1,j
+             a(i,j) = a(i,j)*loadnumbers(j-1)
+             b(i,j) = b(i,j)*loadnumbers(j-1)
+         enddo
+      enddo
+
+!  transform back to physical coordinates
+
+      call shsec(nnlat,nnlon,0,1,loadtide2,nnlat,nnlon,a,b,nnlat,
+     &                 nnlat,wshsec,lshsec,dwork,ldwork,ierror)
+      if (ierror .ne. 0) print *, 'shsec ierror = ',ierror
+
+!  translate loadtide2 from mathematical spherical coordinates to
+!      loadtide in geophysical coordinates.
+!  also flip the sign so that this is the SAL *correction* to the tides
+!   which is approximately 180 degrees out of phase with the tides.
+
+
+      do j=1,nnlon
+         do i=1,nnlat
+            loadtide(j,i)=-loadtide2(nnlat+1-i,j)
+         enddo
+      enddo
+
+!  sal_ReIm follows the OSU (TPXO) convention for the Imaginary 
+!   component: phase = atan2(-Im,Re) and amp = sqrt( Re**2 + Im**2 ).
+
+      write(6,'(a)') 'writing Re to sal_ReIm.A'
+      call flush(6)
+      open( 80, file='sal_ReIm.A', form='unformatted', access="direct", RECL=MRECL)
+      write(80, rec=1)loadtide
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!     calculate loadtide for omegat=90 degrees:
+      write(6,'(a)') 'calculate loadtide for omegat=90 degrees:'
+      call flush(6)
+         
+         do j=1,NJ
+           do i=1,NI
+              if (amp(i,j) .gt. 1.0d10) then
+                tidepad(i,j)=0.0
+             else
+                tidepad(i,j)=amp(i,j)*cos((pi/180.0)*(90.0-phase(i,j)))
+             endif
+           enddo
+         enddo
+
+!     translate tidepad from geophysical coordinates (which use longitude
+!       and latitude, the latter measured from south to north pole) to
+!       tidepad2 in mathematical spherical coordinates (which use colatitude
+!       and longitude, the former measured from north to south pole)
+
+      do j=1,nnlon
+         do i=1,nnlat
+            tidepad2(i,j)=tidepad(j,nnlat+1-i)
+         enddo
+      enddo
+
+!
+! initialize spherepack routines
+!
+      call shaeci(nnlat,nnlon,wshaec,lshaec,dwork,ldwork,ierror)
+      if (ierror .ne. 0) print *, 'shaeci ierror = ',ierror
+      call shseci(nnlat,nnlon,wshsec,lshsec,dwork,ldwork,ierror)
+      if (ierror .ne. 0) print *, 'shseci ierror = ',ierror
+
+!  calculate spherical harmonics
+
+      call shaec(nnlat,nnlon,0,1,tidepad2,nnlat,nnlon,a,b,nnlat,  
+     &                 nnlat,wshaec,lshaec,dwork,ldwork,ierror)
+      if (ierror .ne. 0) print *, 'shaec ierror = ',ierror
+
+!  multiply the harmonics by the load numbers; note start at j=2 since
+!        j=1, i = 1 denotes P00; note set a(1,1)=b(1,1)=0 to eliminate
+!        possibility of nonzero mean
+
+      a(1,1)=0.0
+      b(1,1)=0.0
+
+      do j = 2,nnlat
+         do i = 1,j
+             a(i,j) = a(i,j)*loadnumbers(j-1)
+             b(i,j) = b(i,j)*loadnumbers(j-1)
+         enddo
+      enddo
+
+!  transform back to physical coordinates
+
+      call shsec(nnlat,nnlon,0,1,loadtide2,nnlat,nnlon,a,b,nnlat,
+     &                 nnlat,wshsec,lshsec,dwork,ldwork,ierror)
+      if (ierror .ne. 0) print *, 'shsec ierror = ',ierror
+
+!  translate loadtide2 from mathematical spherical coordinates to
+!      loadtide in geophysical coordinates.
+!  sal_ReIm follows the OSU (TPXO) convention for the Imaginary 
+!   component: phase = atan2(-Im,Re).
+!  this implies that the sign of loadtide should be flipped, but we
+!  then flip the sign again so that this is the SAL *correction* to the 
+!  tides which is approximately 180 degrees out of phase with the tides.
+!  overall, leave the sign of loadtide2 "as is".
+
+      do j=1,nnlon
+         do i=1,nnlat
+            loadtide(j,i)=loadtide2(nnlat+1-i,j)
+         enddo
+      enddo
+
+      write(6,'(a)') 'writing Im to sal_ReIm.A'
+      call flush(6)
+      write(80, rec=2) loadtide
+      close(80)
+      endprogram calcSAL

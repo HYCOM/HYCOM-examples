@@ -1,0 +1,5 @@
+#mkmf -t template -p $executable
+      FC = gfortran
+      LD = gfortran
+  FFLAGS = -m64 -mcmodel=medium -fno-second-underscore -fconvert=big-endian -O2 -march=native -fdefault-real-8 -fdefault-double-8 -ffixed-line-length-132
+ LDFLAGS =  ${FFLAGS}

@@ -1,0 +1,15 @@
+ATLANTIC OCEAN at 1/12 degree from
+http://people.oregonstate.edu/~erofeevs
+https://www.tpxo.net/regional
+
+COAPS 1194> pwd
+/home/awallcraft/pkgs/OTPS/DATA/AO
+COAPS 1195> ll
+total 634696
+drwxr-x---. 2 awallcraft awallcraft      4096 Nov 19 13:26 ./
+drwxr-x---. 5 awallcraft awallcraft      4096 Nov 19 13:26 ../
+-rwxr-----. 1 awallcraft awallcraft  19132488 Jul 28  2008 grid_AO*
+-rw-r-----. 1 awallcraft awallcraft 210253992 Jul 28  2008 hf.AO_2008.out
+-rw-r-----. 1 awallcraft awallcraft        53 Jul 28  2008 Model_AO
+-rw-r-----. 1 awallcraft awallcraft       105 Nov 19 13:26 README.AO
+-rw-r-----. 1 awallcraft awallcraft 420507816 Jul 28  2008 uv.AO_2008.out

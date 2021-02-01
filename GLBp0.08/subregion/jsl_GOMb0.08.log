@@ -1,0 +1,30 @@
+Tue Dec  8 18:27:55 UTC 2020
+/p/home/abozec/HYCOM-examples/GLBp0.08/subregion
+
+xcspmd: idm,jdm = 4500 2251
+
+../../GOMb0.08/topo/regional.gmapi_GLBp0.08.a
+NONE
+NONE
+/p/home/abozec/HYCOM-examples/GLBp0.08/relax/DRAG/JSL.a
+/p/home/abozec/HYCOM-examples/GOMb0.08/relax/DRAG/JSL.a
+ 
+idm    =   263
+jdm    =   193
+khead  =     0
+kskip  =    10
+ 
+
+NO OUTPUT BATHYMETRY
+
+NO INPUT BATHYMETRY
+
+ input domain lon,lat is not landmasked
+
+
+landfill - m,n,if,il,jf,jl = 4500 2251 4500    1 2251    1
+
+landfill: pass   1 filled in     0 points, with     0 still to fill
+ 
+min, max =   0.0000000E+00   1.1287680E-03
+Tue Dec  8 18:27:55 UTC 2020

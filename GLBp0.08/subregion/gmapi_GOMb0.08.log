@@ -1,0 +1,27 @@
+
+xcspmd: idm,jdm = 4500 2251
+
+/p/home/abozec/HYCOM-examples/GOMb0.08/topo/regional.grid.a
+/p/home/abozec/HYCOM-examples/GOMb0.08/topo/regional.gmapi_GLBp0.08.a
+ 
+GLBp0.08 (4500x2251) to GOMb0.08 (maxinc=3)
+ 
+idm    =   263
+jdm    =   193
+maxinc =     3
+ 
+ input domain assumed to be periodic
+output domain assumed to be non-periodic
+ input domain has 1-d lat/lon axes
+output domain has 1-d lat/lon axes
+ 
+dist_max,plat_min,max =     0.160  -90.000   90.000
+jj1 =     1
+ii,jj,incmax =     1    2    1
+ii,jj,incmax =     1    5    2
+ 
+ 
+GLBp0.08 (4500x2251) to GOMb0.08 (maxinc=3)
+xmap:  min,max =   1026.0000   1288.0000
+ymap:  min,max =   1352.1456   1525.5081
+17.747u 0.136s 0:18.26 97.8%	0+0k 272240+856io 0pf+0w

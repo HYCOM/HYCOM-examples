@@ -1,0 +1,39 @@
+ports/README.ports.tides
+
+ports/013/EXPT.src         - define region, bathymetry and expt
+ports/013/ports_latlon.csh - generate ports_latlon.input from ports.input
+ports/013/ports_zuv.csh    - generate ports_?.input from ports_latlon.input
+
+Finally, manually create softlinks to ports_?.input from the expt_ directory.
+
+ports_?.input is the Real and Imag parts for Tidal response at open boundary 
+points (from ports_latlon.input).  These are generated from TPXO9_atlas_v3 
+in bin format by an unmodified copy of extract_HC from the OSU TIDAL 
+PREDICTION Software (OTPS 2020) and then edited into the columns needed 
+by HYCOM.
+
+In OTPS/DATA, we have:
+
+COAPS 1033> pwd
+/home/awallcraft/pkgs/OTPS/DATA
+COAPS 1034> ll | grep v3
+-rw-r-----. 1 awallcraft awallcraft       209 Nov 18 14:04 Model_tpxo9_atlas_v3
+drwxr-x---. 2 awallcraft awallcraft      4096 Nov 19 14:58 TPXO9_atlas_v3/
+COAPS 1035> cat Model_tpxo9_atlas_v3
+/home/awallcraft/pkgs/OTPS/DATA/TPXO9_atlas_v3/h_*_tpxo9_atlas_30_v3
+/home/awallcraft/pkgs/OTPS/DATA/TPXO9_atlas_v3/u_*_tpxo9_atlas_30_v3
+/home/awallcraft/pkgs/OTPS/DATA/TPXO9_atlas_v3/grid_tpxo9_atlas_30_v3
+
+See README.TPXO9_atlas_v3 for details, and note that any OTPS bin files 
+that cover all the port locations can be used, e.g. README.AO.
+
+If ports_latlon.log indicates that two adjacent points are the same, reorder 
+the ports in ports.input to remove the problem.
+
+If ports_zuv.log indicates that some points return "Site is out of model grid 
+OR land", these points are not marked as ocean in tpxo8_atlas.  The easiest 
+fix (for a few points next to land) is to remove them from ports.input, 
+i.e. close the boundary there.  If only on u or v, this might be a point
+that isn't used - so keep it and see what happens.  Otherwise you may have to 
+move the ports further into the ocean by filling one or more rows or columns 
+with land.  The script ports_map.csh will produce a map of where the ports are.

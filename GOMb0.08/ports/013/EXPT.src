@@ -1,0 +1,8 @@
+#
+# --- environment variables defining the region and experiment number.
+#
+setenv R GOMb0.08
+setenv T 07
+setenv E 013 
+#
+setenv X `echo ${E} | cut -c 1-3 | awk '{printf("%04.1f", $1*0.1)}'`

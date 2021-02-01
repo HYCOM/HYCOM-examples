@@ -1,0 +1,32 @@
+  1.1	'sports' = scale factor for nested velocity (typically 1.0)
+  6	'nports' = number of boundary port sections
+  3	'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+251	'ifport' = first i-index
+251	'ilport' = last  i-index (=ifport for east/west port)
+105	'jfport' = first j-index
+116	'jlport' = last  j-index (=jfport for north/south port)
+  2	'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+129	'ifport' = first i-index
+246	'ilport' = last  i-index (=ifport for east/west port)
+  2	'jfport' = first j-index
+  2	'jlport' = last  j-index (=jfport for north/south port)
+  3	'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+262	'ifport' = first i-index
+262	'ilport' = last  i-index (=ifport for east/west port)
+  6	'jfport' = first j-index
+ 24	'jlport' = last  j-index (=jfport for north/south port)
+  3	'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+251	'ifport' = first i-index
+251	'ilport' = last  i-index (=ifport for east/west port)
+ 60	'jfport' = first j-index
+ 84	'jlport' = last  j-index (=jfport for north/south port)
+  3	'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+262	'ifport' = first i-index
+262	'ilport' = last  i-index (=ifport for east/west port)
+121	'jfport' = first j-index
+192	'jlport' = last  j-index (=jfport for north/south port)
+  1     'kdport' = port orientation (1=N, 2=S, 3=E, 4=W)
+226     'ifport' = first i-index
+261     'ilport' = last  i-index (=ifport for east/west port)
+193     'jfport' = first j-index
+193     'jlport' = last  j-index (=jfport for north/south port)

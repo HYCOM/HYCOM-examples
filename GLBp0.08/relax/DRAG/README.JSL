@@ -1,0 +1,8 @@
+This drag scale field (1/s) is based on the "JSL" approach:
+
+Jayne, S.R., St. Laurent, L.C., 2001. Parameterizing tidal dissipation over rough
+topography. Geophys. Res. Lett. 28, 811–814.
+
+Interpolated to 0.08 from the original 0.042 degree version based on the the GEBCO 30-second bathymetry.
+
+It is zero coastwards of the 1,000 m isobath.

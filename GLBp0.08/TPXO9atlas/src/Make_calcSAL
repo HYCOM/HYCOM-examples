@@ -1,0 +1,280 @@
+gfortran -m64 -mcmodel=medium -fno-second-underscore -fconvert=big-endian -O2 -march=native -fdefault-real-8 -fdefault-double-8 -ffixed-line-length-132 -c	shsec.f
+gfortran -m64 -mcmodel=medium -fno-second-underscore -fconvert=big-endian -O2 -march=native -fdefault-real-8 -fdefault-double-8 -ffixed-line-length-132 -c	hrfft.f
+gfortran -m64 -mcmodel=medium -fno-second-underscore -fconvert=big-endian -O2 -march=native -fdefault-real-8 -fdefault-double-8 -ffixed-line-length-132 -c	sphcom.f
+sphcom.f:194:24:
+
+sphcom.f:192:132:
+
+       do 170 k=1,kdo
+                                                                                                                                    2
+sphcom.f:194:24:
+
+       pb = pb-2.d0*k*cp(k+1)*sth
+                        1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:367:25:
+
+sphcom.f:365:132:
+
+    30 do 50 np1=2,nlat
+                                                                                                                                    2
+sphcom.f:367:25:
+
+       z(i,np1,i3) = z1(i,np1)
+                         1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:537:17:
+
+sphcom.f:535:132:
+
+       do 201 k=2,lq
+                                                                                                                                    2
+sphcom.f:537:17:
+
+       zh = zh+cz(k)*cth
+                 1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:550:17:
+
+sphcom.f:548:132:
+
+       do 202 k=1,ls
+                                                                                                                                    2
+sphcom.f:550:17:
+
+       zh = zh+cz(k+1)*sth
+                 1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:577:17:
+
+sphcom.f:575:132:
+
+       do 204 k=1,lq
+                                                                                                                                    2
+sphcom.f:577:17:
+
+       zh = zh+cz(k+1)*sth
+                 1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:595:17:
+
+sphcom.f:593:132:
+
+       do 50 k=2,lc
+                                                                                                                                    2
+sphcom.f:595:17:
+
+       zh = zh+cz(k)*cth
+                 1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:608:17:
+
+sphcom.f:606:132:
+
+       do 70 k=1,lq
+                                                                                                                                    2
+sphcom.f:608:17:
+
+       zh = zh+cz(k+1)*sth
+                 1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:636:17:
+
+sphcom.f:634:132:
+
+       do 120 k=1,lq
+                                                                                                                                    2
+sphcom.f:636:17:
+
+       zh = zh+cz(k+1)*sth
+                 1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:679:25:
+
+sphcom.f:677:132:
+
+    30 do 50 np1=2,nlat
+                                                                                                                                    2
+sphcom.f:679:25:
+
+       p(i,np1,i3) = p1(i,np1)
+                         1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1692:23:
+
+sphcom.f:1690:132:
+
+       do 55 l=1,ncv
+                                                                                                                                    2
+sphcom.f:1692:23:
+
+       cv(l) = -fk*work(l+1)/srnp1
+                       1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1361:20:
+
+       do 10 k=1,ls
+                                                                                                                                    2
+       zvh = zvh+czv(k+1)*sth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1372:20:
+
+       do 20 k=2,lq
+                                                                                                                                    2
+       zvh = zvh+czv(k)*cth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1384:20:
+
+       do 30 k=1,lq
+                                                                                                                                    2
+       zvh = zvh+czv(k+1)*sth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1408:20:
+
+       do 55 k=1,lq
+                                                                                                                                    2
+       zvh = zvh+czv(k+1)*sth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1419:20:
+
+       do 57 k=2,lc
+                                                                                                                                    2
+       zvh = zvh+czv(k)*cth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1430:20:
+
+       do 58 k=1,lq
+                                                                                                                                    2
+       zvh = zvh+czv(k+1)*sth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1583:20:
+
+       do 30 k=1,lq
+                                                                                                                                    2
+       zwh = zwh+czw(k+1)*sth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1606:20:
+
+       do 10 k=1,ls
+                                                                                                                                    2
+       zwh = zwh+czw(k+1)*sth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1617:20:
+
+       do 20 k=2,lq
+                                                                                                                                    2
+       zwh = zwh+czw(k)*cth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1630:20:
+
+       do 55 k=1,lq
+                                                                                                                                    2
+       zwh = zwh+czw(k+1)*sth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1654:20:
+
+       do 65 k=1,lq
+                                                                                                                                    2
+       zwh = zwh+czw(k+1)*sth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1665:20:
+
+       do 70 k=2,lc
+                                                                                                                                    2
+       zwh = zwh+czw(k)*cth
+                    1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:934:27:
+
+sphcom.f:932:132:
+
+    30 do 50 np1=2,nlat
+                                                                                                                                    2
+sphcom.f:934:27:
+
+       zv(i,np1,i3) = zv1(i,np1)
+                           1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:992:27:
+
+sphcom.f:990:132:
+
+       do 45 np1=2,nlat
+                                                                                                                                    2
+sphcom.f:992:27:
+
+       zw(i,np1,i3) = zw1(i,np1)
+                           1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:997:27:
+
+sphcom.f:995:132:
+
+    30 do 50 np1=3,nlat
+                                                                                                                                    2
+sphcom.f:997:27:
+
+       zw(i,np1,i3) = zw2(i,np1)
+                           1
+Warning: Array reference at (1) out of bounds (3 > 1) in loop beginning at (2)
+sphcom.f:1893:17:
+
+       do 25 k=2,ncw
+                                                                                                                                    2
+       wh = wh+cw(k)*cth
+                 1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1137:27:
+
+sphcom.f:1135:132:
+
+    30 do 50 np1=2,nlat
+                                                                                                                                    2
+sphcom.f:1137:27:
+
+       vb(i,np1,i3) = vb1(i,np1)
+                           1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1195:27:
+
+sphcom.f:1193:132:
+
+       do 45 np1=2,nlat
+                                                                                                                                    2
+sphcom.f:1195:27:
+
+       wb(i,np1,i3) = wb1(i,np1)
+                           1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+sphcom.f:1200:27:
+
+sphcom.f:1198:132:
+
+    30 do 50 np1=3,nlat
+                                                                                                                                    2
+sphcom.f:1200:27:
+
+       wb(i,np1,i3) = wb2(i,np1)
+                           1
+Warning: Array reference at (1) out of bounds (3 > 1) in loop beginning at (2)
+sphcom.f:2391:17:
+
+       do 25 k=2,ncw
+                                                                                                                                    2
+       wh = wh+cw(k)*sth
+                 1
+Warning: Array reference at (1) out of bounds (2 > 1) in loop beginning at (2)
+gfortran -m64 -mcmodel=medium -fno-second-underscore -fconvert=big-endian -O2 -march=native -fdefault-real-8 -fdefault-double-8 -ffixed-line-length-132 -c	shaec.f
+gfortran -m64 -mcmodel=medium -fno-second-underscore -fconvert=big-endian -O2 -march=native -fdefault-real-8 -fdefault-double-8 -ffixed-line-length-132 -c	calcSAL.f
+gfortran shsec.o hrfft.o sphcom.o shaec.o calcSAL.o -o calcSAL.x -m64 -mcmodel=medium -fno-second-underscore -fconvert=big-endian -O2 -march=native -fdefault-real-8 -fdefault-double-8 -ffixed-line-length-132

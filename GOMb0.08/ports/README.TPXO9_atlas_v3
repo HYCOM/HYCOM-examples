@@ -1,0 +1,31 @@
+Register to download via e-mail:
+https://www.tpxo.net/tpxo-products-and-registration
+
+Need 9 constituents, with m4 only used for diagnostics:
+
+COAPS 845> pwd
+/home/awallcraft/pkgs/OTPS/DATA/TPXO9_atlas_v3
+COAPS 846> ll
+total 12759976
+drwxr-x---. 2 awallcraft awallcraft      4096 Nov 19 13:43 ./
+drwxr-x---. 5 awallcraft awallcraft      4096 Nov 19 13:26 ../
+-rw-r-----. 1 awallcraft awallcraft 466646468 Nov 18 13:33 grid_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 466646448 Oct 28 18:51 h_k1_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 466646448 Oct 28 18:51 h_k2_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 466646448 Nov 18 13:37 h_m2_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 466646448 Oct 28 18:51 h_m4_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 466646448 Oct 28 18:52 h_n2_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 466646448 Oct 28 18:52 h_o1_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 466646448 Oct 28 18:53 h_p1_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 466646448 Oct 28 18:53 h_q1_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 466646448 Oct 28 18:53 h_s2_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft        85 Nov 19 13:43 README.TPXO9_atlas_v3
+-rw-r-----. 1 awallcraft awallcraft 933292848 Oct 28 18:53 u_k1_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 933292848 Nov 18 14:07 u_k2_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 933292848 Nov 18 13:36 u_m2_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 933292848 Oct 28 18:54 u_m4_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 933292848 Oct 28 18:56 u_n2_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 933292848 Oct 28 18:56 u_o1_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 933292848 Oct 28 18:56 u_p1_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 933292848 Oct 28 18:56 u_q1_tpxo9_atlas_30_v3
+-rw-r-----. 1 awallcraft awallcraft 933292848 Oct 28 18:57 u_s2_tpxo9_atlas_30_v3

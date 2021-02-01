@@ -1,0 +1,45 @@
+Tue Dec  8 18:25:34 UTC 2020
+/p/home/abozec/HYCOM-examples/GLBp0.08/subregion
+
+xcspmd: idm,jdm = 4500 2251
+
+../../GOMb0.08/topo/regional.gmapi_GLBp0.08.a
+NONE
+NONE
+/p/home/abozec/HYCOM-examples/GLBp0.08/TPXO9atlas/tpxo9a_sal_hReIm.a
+/p/home/abozec/HYCOM-examples/GOMb0.08/TPXO9atlas/tpxo9a_sal_hReIm_GLBp.a
+ 
+idm    =   263
+jdm    =   193
+khead  =     0
+kskip  =    19
+ 
+
+NO OUTPUT BATHYMETRY
+
+NO INPUT BATHYMETRY
+
+ input domain lon,lat is not landmasked
+
+
+landfill - m,n,if,il,jf,jl = 4500 2251 4500    1 2251    1
+
+landfill: pass   1 filled in     0 points, with     0 still to fill
+ 
+SAL-m2R 	min, max =  -3.2318935E-02   3.4848701E-03
+SAL-m2I 	min, max =  -1.3474051E-02  -1.1111567E-03
+SAL-s2R 	min, max =  -6.8886331E-03  -1.4637698E-03
+SAL-s2I 	min, max =  -1.5970126E-03   1.9860566E-03
+SAL-k1R 	min, max =  -3.4641274E-03   8.5306028E-03
+SAL-k1I 	min, max =  -4.7246576E-03   1.2386680E-03
+SAL-o1R 	min, max =  -4.4316873E-03   6.5549016E-03
+SAL-o1I 	min, max =  -3.2395227E-03   1.1005709E-03
+SAL-n2R 	min, max =  -6.4706737E-03   2.2822369E-03
+SAL-n2I 	min, max =  -3.6567454E-03  -1.1649584E-04
+SAL-p1R 	min, max =  -1.0602045E-03   2.7066465E-03
+SAL-p1I 	min, max =  -1.3892832E-03   3.9234254E-04
+SAL-k2R 	min, max =  -1.8400064E-03  -3.4948491E-04
+SAL-k2I 	min, max =  -4.3724658E-04   6.3054840E-04
+SAL-q1R 	min, max =  -1.1546821E-03   1.3852806E-03
+SAL-q1I 	min, max =  -5.2313803E-04   2.4451598E-05
+Tue Dec  8 18:25:36 UTC 2020

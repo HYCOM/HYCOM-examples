@@ -42,6 +42,16 @@ tar xvf relax_010.tar.gz
 wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_DRAG.tar.gz
 tar xvf relax_DRAG.tar.gz
 
+# --- for tidal simulation
+# --- N.B.: can be created using ${R}/relax/DRAG scripts
+#wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_DRAG_tides.tar.gz
+#tar xvf relax_DRAG_tides.tar.gz
+
+# --- for tidal simulation
+# # --- N.B.: can be created using ${R}/relax/SAL scripts
+# #wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_SAL_tides.tar.gz
+# #tar xvf relax_SAL_tides.tar.gz
+
 # --- get SSSRMX file
 # --- N.B.: can be created using ${R}/relax/SSSRMX scripts
 wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_SSSRMX.tar.gz
