@@ -26,6 +26,10 @@ tar xvf CFSR_GOM.tar.gz
 wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/datasets/WOA13_HYCOM.tar.gz
 tar xvf WOA13_HYCOM.tar.gz
 
+# --- get WOA18 for HYCOM T and S climatology data
+#wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/datasets/WOA18_HYCOM.tar.gz
+#tar xvf WOA18_HYCOM.tar.gz
+
 # --- get PHC3 for HYCOM T and S climatology data
 #wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/datasets/PHC3_HYCOM.tar.gz
 #tar xvf PHC3_HYCOM.tar.gz
