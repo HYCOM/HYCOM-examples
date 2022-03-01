@@ -62,4 +62,5 @@ ${O}/restart_094a.a
  41     'kdm   ' = number of layers
  34.0   'thbase' = reference density (sigma units)
 900.0   'baclin' = baroclinic time step (seconds), int. divisor of 86400
+  0     'rmontg' = pbavg correction from relax.montg file  (0=F,1=T)
 E-o-D

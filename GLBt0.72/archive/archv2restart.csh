@@ -36,6 +36,14 @@ setenv JDM    `grep jdm ${D}/../blkdat.input | awk '{print $1}'`
 setenv YRFLAG `grep yrflag ${D}/../blkdat.input | awk '{print $1}'`
 setenv THBASE `grep thbase ${D}/../blkdat.input | awk '{print $1}'`
 setenv BACLIN `grep baclin ${D}/../blkdat.input | awk '{print $1}'`
+setenv SSHFLG `grep 'diagnostic SSH' ${D}/../blkdat.input | awk '{print $1}'`
+
+# --- add correction to pbavg to make it consistent with psikk and thkk
+if (${SSHFLG} == 2) then
+  setenv RMONTG 1
+else
+  setenv RMONTG 0
+endif
 
 #
 # --- get depth and grid
@@ -76,5 +84,6 @@ ${JDM}     'jdm   ' = latitudinal  array size
 ${K}       'kdm   ' = number of layers
 ${THBASE}  'thbase' = reference density (sigma units)
 ${BACLIN}  'baclin' = baroclinic time step (seconds), int. divisor of 86400
+${RMONTG}  'rmontg' = pbavg correction from relax.montg file  (0=F,1=T)
+${S}/relax.montg.a
 E-o-D
-
