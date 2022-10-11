@@ -1,0 +1,11 @@
+This is an example of generating CICE6 forcing netCDF files using HYCOM-tools.
+
+The Gulf of Mexico has no sea ice, but the process is the same for any region.
+
+Note that a HYCOM regional.grid.[ab] file is required that is consistet with the CICE6 region.
+
+When we run hycom_cice, we do not use CICE6 forcing netCDF files but rather the equivalent .r files.  So this has not be tested with CICE6.
+
+Run with msub_csh 011pbs.csh 01
+
+The example produces monthly forcing files, but forcing files of any length can be produced by editing 011.awk and LIST.

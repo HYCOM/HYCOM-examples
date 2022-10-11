@@ -1,0 +1,38 @@
+# --- OS is operating system of machine
+# --- R  is region name.
+# --- V  is source code version number.
+# --- T  is topography number.
+# --- K  is number of layers.
+# --- E  is expt number (NNN).
+# --- X  is expt number (NN.N).
+# --- P  is primary path.
+# --- D  is permanent directory.
+# --- S  is scratch directory, must not be the permanent directory.
+# --- DS is the datasets directory.
+# --- N  is the name of the atmospheric forcing (PRE-processing).
+# --- MAKE_FORCE is logical for creating forcing at run time.
+# --- CICE_TYPE  is logical for CICE forcing file type (0=.r, 1=.nc)
+#
+setenv OS Linux
+setenv R  GOMb0.08
+setenv E  011
+setenv X  01.1
+setenv P  HYCOM-examples/GOMb0.08/cice_01.1/data
+setenv D  /p/home/wallcraf/HYCOM-examples/GOMb0.08/cice_01.1/data
+setenv S  /p/work1/wallcraf/HYCOM-examples/GOMb0.08/cice_01.1/data/
+setenv DS /p/work1/wallcraf/HYCOM-examples/GOMb0.08/cice_01.1/../datasets
+setenv N  cfsr_gom
+setenv W  /p/work1/wallcraf/HYCOM-examples/datasets/CFSR_GOM 
+setenv MAKE_FORCE 1
+setenv CICE_TYPE  1
+
+# --- ARCHIVE is logical for archive transfer to Newton.
+# --- QSUBMIT is local submit command.
+setenv ARCHIVE 0 
+#setenv QSUBMIT qsub
+setenv QSUBMIT ~wallcraf/bin/q_navo
+
+#
+# --- create data directories on archive:
+#
+#ssh newton mkdir -p /u/home/wallcraf/HYCOM-examples/GOMb0.08/cice_01.1/data/cice
