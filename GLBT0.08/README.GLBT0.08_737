@@ -1,0 +1,66 @@
+This is a 41-layer 1/12 degree fully global HYCOM benchmark.  It is a
+HYCOM-only version of the GOFS 3.1 HYCOM_CICE4 setup with the typical
+I/O.
+
+The benchmark times are for 1 model day on 1525 processors.  The benchmark
+requires about 0.21 GB of memory per processor and about 420 GB of globally
+accessible scratch disk.
+
+To get the input data:
+
+a) Go to expt_73.7/DATA
+b) Edit the location where the input data should go (DS) in get_DATA.csh
+c) Execute get_DATA.csh to download and untar the 4 files 
+   (1-25GB,2-26GB,3-17GB, 4-800K)  
+
+
+To compile HYCOM from the src_2.3.01_relo_mpi directory:
+
+a) Edit Make_global.csh for your machine, compiler, and mpi library.
+   This will include sourcing ./config/$(ARCH)_$(TYPE), where TYPE will
+   be mpi (or ompi for loop-level OpenMP and MPI, compile in
+   src_2.3.01_relo_ompi).
+b) If an appropriate ./config/$(ARCH)_$(TYPE) exists, then edit
+   Make.csh to source it and create the executable via the command:
+   ./Make.csh >& Make.log.  Existing ./config/$(ARCH)_$(TYPE) files
+   can be modified to improve performance or accuracy.
+c) If an appropriate ./config/$(ARCH)_$(TYPE) does not exist, then create
+   one using the existing files as a guide and then proceed as in (b).
+d) HYCOM must always be compiled with default REAL at least 64-bits,
+   this is typically done with compiler options.
+
+To run the benchmark from the expt_73.7 directory:
+
+a) Create a machine specific subdirctory based on the result of the
+   uname command, e.g. AIX or IRIX64.
+b) Copy ../EXAMPLE/HY01525.csh to this directory.  Edit it to identify
+   the scratch and DATA directories (environment variables P,S,D), the
+   source code directory (environment variables V) and add any needed
+   batch header.
+c) Several machine types are already handled by the standard script.
+   If your machine is not included, add a new subsection to each switch
+   command for your machine.
+d) Submit the script to your batch system.
+e) The benchmark time is the wall time in minutes between the two date
+   commands invoked by the script.  The command ../time.csh will calculate
+   this wall time, assuming that the result of the run is in *.log.
+   There are several other ../*.csh scripts which calculate other times
+   of interest.
+f) The accuracy critera are that all the numbers on the two output lines
+   that include "31174560 mean" agree with ../EXAMPLE/HY01525.acc to an
+   accuracy of plus or minus 0.01.
+
+This benchmark can be run on any number of processors for which a
+patch.input_?????s8 file is provided in expt_73.7/DATA.  HYCOM allocates
+space for all primary arrays at run time, so a single src_2.3.01_relo_mpi
+source directory works for all the provided number of processors, i.e. for
+379, 511, 759, 875, 1000, 1020, 1525, 1549, 2036, 3032, 3058, 4074, 6060,
+8153, 10205, 12189, 12286, 14010, 16282, 24464, and 32641.  The very first
+MPI task may require more memory and does some overhead work, and so it
+is often advantageous to place it on a lightly loaded node.  This is
+typically handled by the batch or "mpirun" subsystem.  Lustre I/O
+performance depends on the specifics of your system's configuration, the
+number of stripes per file, and on the domain decoposition.  In
+particular, do not set the number of stripes larger than mpe in
+patch.input.  The stripe-count is set by lfs setstripe -c in the run
+script.
