@@ -161,8 +161,8 @@ endif
 C
 setenv YC1 `echo $Y01 | awk '{printf("%04d\n",$1+1900)}'`
 setenv YCX `echo $YXX | awk '{printf("%04d\n",$1+1900)}'`
-setenv CDF071 ${N}-sea_${YC1}_01hr_dlwsfc.nc
-setenv CDF072 ${N}-sea_${YCX}_01hr_dlwsfc.nc
+setenv CDF071 ${N}-sea_${YC1}_01hr_surtmp.nc
+setenv CDF072 ${N}-sea_${YCX}_01hr_surtmp.nc
 C
 touch  $CDF071
 if (-z $CDF071) then
