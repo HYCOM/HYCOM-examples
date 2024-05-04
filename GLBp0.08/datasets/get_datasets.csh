@@ -13,15 +13,15 @@ mkdir -p ${DS}
 cd ${DS}/
 
 # --- get bottom drag file suitable for tidal simulation
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_DRAG.tar.gz
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_DRAG.tar.gz
 tar xvf relax_DRAG.tar.gz
 
 # --- get topo data
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/topo.tar.gz
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/topo.tar.gz
 tar xvf topo.tar.gz
 
 # --- get TPXO9atlas Re/Im tidal signal and S.A.L.
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/TPXO9atlas.tar.gz
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/TPXO9atlas.tar.gz
 tar xvf TPXO9atlas.tar.gz
 
 
