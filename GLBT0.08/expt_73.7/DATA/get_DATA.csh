@@ -13,16 +13,15 @@ mkdir -p ${DS}
 cd ${DS}/
 
 # --- get GLBT0.08 input files
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA1.tar.gz
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA1.tar.lis
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA1.tar.gz
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA1.tar.lis
 tar xvf GLBT0.08_737_DATA1.tar.gz
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA2.tar.gz
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA2.tar.lis
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA2.tar.gz
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA2.tar.lis
 tar xvf GLBT0.08_737_DATA2.tar.gz
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA3.tar.gz
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA3.tar.lis
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA3.tar.gz
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA3.tar.lis
 tar xvf GLBT0.08_737_DATA3.tar.gz
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA4.tar.gz
-wget ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA4.tar.lis
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA4.tar.gz
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/GLBT0.08_737_DATA4.tar.lis
 tar xvf GLBT0.08_737_DATA4.tar.gz
-
