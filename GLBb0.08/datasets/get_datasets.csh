@@ -13,6 +13,6 @@ mkdir -p ${DS}
 cd ${DS}/
 
 # --- get topo 
-wget "ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/topo.tar.gz"
+wget "http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/topo.tar.gz"
 tar xvf topo.tar.gz
 
