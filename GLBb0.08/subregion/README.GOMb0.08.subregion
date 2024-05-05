@@ -4,7 +4,7 @@ server (see ~/HYCOM-examples/datasets/get_datasets.csh) and necessitate the grid
 bathymetry of GLBb0.08; see ~/HYCOM-examples/GLBb0.08/datasets/get_datasets.csh).
 
 If you do not want to re-create the nest files, download them directly at: 
-ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/subregion.tar.gz
+http://data.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/subregion.tar.gz
 
 
 The GOMb0.08 configuration is a sub-region of GLBb0.08 at the same resolution, and this 
