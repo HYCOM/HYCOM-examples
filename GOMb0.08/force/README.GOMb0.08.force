@@ -1,7 +1,7 @@
 Invariants forcing files are available for this configuration on the HYCOM server at:
-ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/force_offset.tar.gz
-ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/force_rivers.tar.gz
-ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/force_seawifs.tar.gz
+http://data.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/force_offset.tar.gz
+http://data.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/force_rivers.tar.gz
+http://data.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/force_seawifs.tar.gz
 
 All of them can be recreated with the scripts available in GOMb0.08/force/offset, 
 GOMb0.08/force/rivers and GOMb0.08/force/seawifs. N.B. the seawifs scripts requires the 
