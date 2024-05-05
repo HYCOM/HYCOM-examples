@@ -1,5 +1,5 @@
 Topo and grid files are available for this configuration on the HYCOM server at:
-ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/topo.tar.gz.
+http://data.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/topo.tar.gz.
 Most of them can be recreated with the scripts available in this example.
 
 To create the GOMb0.08 grid, use the regional.grid.csh script in GOMb0.08/topo. 
