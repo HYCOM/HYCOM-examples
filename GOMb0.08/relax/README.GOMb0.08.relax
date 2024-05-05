@@ -1,5 +1,5 @@
 Relax and invariants files are available for this configuration on the HYCOM server at:
-ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/relax_010.tar.gz
+http://data.hycom.org/pub/GitHub/HYCOM-examples/GOMb0.08/datasets/relax_010.tar.gz
 Most of them can be recreated with the scripts available in this example.
 
 To create the initial conditions of your run, as well as the relaxation mask for the
