@@ -49,8 +49,8 @@ bottom drag (cb.[ab]) and the surface salinity limiter (relax.sssrmx.[ab]). See
 GOMb0.08/relax/DRAG and GOMb0.08/relax/SSSRMX, edit the respective scripts and run them to 
 get cb_07_10mm.[ab] and sssrmx_m0p5psu.[ab] in DS/relax/DRAG and DS/relax/SSSRMX, respectively.
 These files are also available on the HYCOM server at: 
-ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_DRAG.tar.gz
-ftp://ftp.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_SSSRMX.tar.gz
+http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_DRAG.tar.gz
+http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_SSSRMX.tar.gz
  
 
 
