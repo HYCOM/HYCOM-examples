@@ -11,7 +11,14 @@ buffer zone.  Everywhere else the bathymetry and coastline can be optimized for 
 higher resolution.  For example, to create the GOMb0.08 bathymetry do the following:
 
 a) Generate the best possible fine grid bathymetry and coastline everywhere, in this 
-case GOMb0.08/datasets/topo/depth_GOMb0.08_04.[ab].
+case GOMb0.08/datasets/topo/depth_GOMb0.08_04.[ab].  This is from 94m which in turn
+is depth_GOMb0.01_04bs17m subregioned to GOMb0.08 via isuba_topog.  Normally, the 
+best bathymetry is from GEBCO (say) and so we also provide depth_GOMb0.08_19.csh
+and depth_GOMb0.08_20_fill-shrink-clip-smooth.csh as examples of how to do this.  
+GEBCO_2019 is the last version that provides sub-meter resolution in shallow
+water, so we don't recommend more recent versions.  Note that depth_GOMb0.08_20 
+may need additional editing (e.g. landfill) and it is provided as an example of 
+the process, it has not been used in a model run.
 
 b) Interpolate the coarse enclosing bathymetry to the nested region using 
 TOOLS/subregion/src/isub_topog. The script is GLBb0.08/subregion/depth_GOMb0.08_09m11s.csh, 
