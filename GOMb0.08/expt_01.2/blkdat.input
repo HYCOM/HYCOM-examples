@@ -1,7 +1,7 @@
 0.313c CFSR wind, thermal, precip 1-hrly forcing ; LWcorr; WOA13 SSS relax;
 17T Sigma2*; WOA13; KPP; SeaWiFS chl; HYCOM; A=20;Smag=.05;momtyp=2;
 Z(7):1-7,Z(16):8,Z(2):10-16,Z(13):dp00/f/x=36/1.18/262;Z(3):400-600m;
-sigma:84-14m; depth_GOMb0.08_07; HYCOM 2.3.01; Nested in daily GLBb0.08 53.X;
+sigma:84-14m; depth_GOMb0.08_07; HYCOM 2.3.01; Nested in monthly GLBb0.08 53.X;
   23	  'iversn' = hycom version number x10
  012	  'iexpt ' = experiment number x10
  263	  'idm   ' = longitudinal array size
@@ -145,6 +145,7 @@ sigma:84-14m; depth_GOMb0.08_07; HYCOM 2.3.01; Nested in daily GLBb0.08 53.X;
    0      'hybraf' = HYBGEN: Robert-Asselin flag   (0=F,1=T)
    8.0	  'hybrlx' = HYBGEN: inverse relaxation coefficient (time steps)
    0.01	  'hybiso' = HYBGEN: Use PCM if layer is within hybiso of target density
+   1.0	  'hybthn' = HYBGEN: ratio of layer thicknesses to select the thiner
    3	  'hybmap' = HYBGEN: remapper  flag (0=PCM, 1=PLM,  2=PPM, 3=WENO-like)
    0	  'hybflg' = HYBGEN: generator flag (0=T&S, 1=th&S, 2=th&T)
    0	  'advflg' = thermal advection flag (0=T&S, 1=th&S, 2=th&T)
@@ -183,6 +184,7 @@ sigma:84-14m; depth_GOMb0.08_07; HYCOM 2.3.01; Nested in daily GLBb0.08 53.X;
    0      'ishelf' = ice shelf flag    (0=none,1=ice shelf over ocean)
    0	  'ntracr' = number of tracers (0=none,negative to initialize)
    0	  'trcflg' = tracer flags      (one digit per tr, most sig. replicated)
+   0	  'mtracr' = number of diagnostic tracers
  180      'tsofrq' = number of time steps between anti-drift offset calcs
    0.0    'tofset' = temperature anti-drift offset (degC/century)
    0.0    'sofset' = salnity     anti-drift offset  (psu/century)
@@ -247,7 +249,7 @@ sigma:84-14m; depth_GOMb0.08_07; HYCOM 2.3.01; Nested in daily GLBb0.08 53.X;
    6      'flxflg' = thermal forcing   flag (0=none,3=net_flx,1-2,4-6=sst-based)
    6      'empflg' = E-P     forcing   flag (0=none,3=net_E-P,1-2,4-6=sst-bas_E)
    0.0    'emptgt' = E-P     balance target (mm/week, into ocean)
-   1      'empbal' = E-P     balance   flag (0=none,1=offset,2=scale)
+   0      'empbal' = E-P     balance   flag (0=none,1=offset,2=scale)
    0      'dswflg' = diurnal shortwave flag (0=none,1=daily to diurnal corr.)
    2      'albflg' = ocean albedo      flag (0=none,1=const,2=L&Y)
   -1	  'sssflg' = SSS relaxation    flag (0=none,1=clim,-1=clim&rmx)
@@ -263,4 +265,4 @@ sigma:84-14m; depth_GOMb0.08_07; HYCOM 2.3.01; Nested in daily GLBb0.08 53.X;
    0	  'relax ' = activate lateral boundary nudging    (0=F,1=T)
    0	  'trcrlx' = activate lat. bound. tracer nudging  (0=F,1=T)
    1	  'priver' = rivers as a precipitation bogas      (0=F,1=T)
-   1      'epmass' = treat evap-precip as a mass exchange (0=F,1=T)
+   2      'epmass' = E-P mass exchange flag (0=no,1=yes,2=river)
