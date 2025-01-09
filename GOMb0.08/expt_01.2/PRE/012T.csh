@@ -23,7 +23,7 @@ C --- prebuild this script similar to a model script
 C
 C --- EX is experiment directory
 C
-setenv EX /p/home/abozec/HYCOM-examples/GOMb0.08/expt_01.2
+setenv EX ~/HYCOM-examples/GOMb0.08/expt_01.2
 C
 C --- E is expt number.
 C --- P is primary path.
@@ -42,7 +42,7 @@ C   assumes /usr/5bin is before /bin and /usr/bin in PATH.
     setenv BINRUN   ""
     breaksw
 case 'Linux':
-case 'OSF1':
+case 'SHASTA':
 case 'IRIX64':
 case 'AIX':
     setenv BINRUN   ""
@@ -72,7 +72,7 @@ case 'SunOS':
 case 'Linux':
 case 'HPE':
 case 'XT4':
-case 'OSF1':
+case 'SHASTA':
 case 'AIX':
 case 'unicos':
 case 'unicosmk':

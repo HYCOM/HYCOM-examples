@@ -146,6 +146,7 @@ sigma:84-14m; depth_GOMb0.08_07; HYCOM 2.3.01; Nested in monthly GLBb0.08 53.X;
    8.0	  'hybrlx' = HYBGEN: inverse relaxation coefficient (time steps)
    0.01	  'hybiso' = HYBGEN: Use PCM if layer is within hybiso of target density
    1.0	  'hybthn' = HYBGEN: ratio of layer thicknesses to select the thiner
+   0.0	  'hybthk' = HYBGEN: thick-thin-thick ratio to expand the thin layer
    3	  'hybmap' = HYBGEN: remapper  flag (0=PCM, 1=PLM,  2=PPM, 3=WENO-like)
    0	  'hybflg' = HYBGEN: generator flag (0=T&S, 1=th&S, 2=th&T)
    0	  'advflg' = thermal advection flag (0=T&S, 1=th&S, 2=th&T)
@@ -185,6 +186,8 @@ sigma:84-14m; depth_GOMb0.08_07; HYCOM 2.3.01; Nested in monthly GLBb0.08 53.X;
    0	  'ntracr' = number of tracers (0=none,negative to initialize)
    0	  'trcflg' = tracer flags      (one digit per tr, most sig. replicated)
    0	  'mtracr' = number of diagnostic tracers
+   1	  'mstrcr' = number of surface    tracers
+ 703      'strflg' = surface tracer flag (70X: 3=oneta,4=pbavg)
  180      'tsofrq' = number of time steps between anti-drift offset calcs
    0.0    'tofset' = temperature anti-drift offset (degC/century)
    0.0    'sofset' = salnity     anti-drift offset  (psu/century)
@@ -240,11 +243,20 @@ sigma:84-14m; depth_GOMb0.08_07; HYCOM 2.3.01; Nested in monthly GLBb0.08 53.X;
    0      'tiddrg' = TIDES: tidal drag flag (0=no;1=scalar;2=tensor)
  500.0    'thkdrg' = TIDES: thickness of tidal drag bottom boundary layer (m)
    0.0    'drgscl' = TIDES: scale factor for tidal drag (0.0 when tiddrg=0)
+   0.0    'tidfm2' = TIDES: M2 streaming filter bandwidth  (0.0 for no filter)
+   0.0    'tidfs2' = TIDES: S2 streaming filter bandwidth  (0.0 for no filter)
+   0.0    'tidfk1' = TIDES: K1 streaming filter bandwidth  (0.0 for no filter)
+   0.0    'tidfo1' = TIDES: O1 streaming filter bandwidth  (0.0 for no filter)
+   0.0    'drgscm' = TIDES: scale factor for M2 tidal drag (0.0 when tidfk1=0.0)
+   0.0    'drgscs' = TIDES: scale factor for S2 tidal drag (0.0 when tidfk1=0.0)
+   0.0    'drgsck' = TIDES: scale factor for K1 tidal drag (0.0 when tidfk1=0.0)
+   0.0    'drgsco' = TIDES: scale factor for O1 tidal drag (0.0 when tidfk1=0.0)
    1	  'tidgen' = TIDES: generic time (0=F,1=T)
    1.0    'tidrmp' = TIDES:            ramp time  (days)
    0.0    'tid_t0' = TIDES: origin for ramp time  (model day)
   12	  'clmflg' = climatology frequency flag   (6=bimonthly, 12=monthly)
-   -4	  'wndflg' = wind stress input flag (0=none,1=uv-g,2,3=p-grd,4,5=wnd10m)
+  -4	  'wndflg' = wind stress input flag (0=none,1=uv-g,2,3=p-grd,4,5=wnd10m)
+   0.0    'ocnscl' = scale factor for Uocn in relative wind (0.0: absolute wind)
    4      'ustflg' = ustar   forcing   flag        (3=input,1,2=wndspd,4=stress)
    6      'flxflg' = thermal forcing   flag (0=none,3=net_flx,1-2,4-6=sst-based)
    6      'empflg' = E-P     forcing   flag (0=none,3=net_E-P,1-2,4-6=sst-bas_E)

@@ -17,7 +17,7 @@ date +"START  %c"
 C
 C --- EX is experiment directory
 C
-setenv EX /p/home/abozec/HYCOM-examples/GOMb0.08/expt_01.2
+setenv EX ~/HYCOM-examples/GOMb0.08/expt_01.2
 C
 C --- E is expt number.
 C --- P is primary path.

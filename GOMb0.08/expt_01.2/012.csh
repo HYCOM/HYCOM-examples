@@ -29,7 +29,7 @@ C --- 01.2 - twin of 01.1 with Montgomery correction from 1 year of 01.1
 
 C --- EX is experiment directory, required because batch systems often start scripts in home
 C
-setenv EX /p/home/abozec/HYCOM-examples/GOMb0.08/expt_01.2
+setenv EX /p/home/${user}/HYCOM-examples/GOMb0.08/expt_01.2
 C
 C --- Preamble, defined in EXPT.src
 C
@@ -93,6 +93,17 @@ case 'XC40':
 #  lfs setstripe    $S -S 1048576 -i -1 -c 48
   setenv NOMP 0
   setenv NMPI 61
+  breaksw
+case 'SHASTA':
+  unset echo
+  module -s swap PrgEnv-cray PrgEnv-intel
+  module -s use --append /p/app/modulefiles
+# cray-mpich/8.1.[12] do not work
+  module -s swap cray-mpich/8.1.4
+  module list
+  set echo
+  setenv NOMP 0
+  setenv NMPI 122 
   breaksw
 case 'AIX':
   if      (-e /gpfs/work) then
@@ -273,6 +284,7 @@ switch ($OS)
 case 'AIX':
 case 'unicos':
 case 'HPE':      
+case 'SHASTA':
 case 'ICE':      
 case 'IDP':
 case 'XC30':
@@ -900,6 +912,7 @@ case 'ICE':
     ./${HEXE}
     breaksw
 case 'HPE':
+case 'SHASTA':
     limit stacksize unlimited
     setenv OMP_NUM_THREADS  $NOMP
     setenv OMP_STACKSIZE    127M
@@ -1112,6 +1125,27 @@ case 'XC40':
       time aprun -n $NMPI -d 3 ./${HEXE}
      else if ($NOMP == 4) then
       time aprun -n $NMPI -d 4 ./${HEXE}
+    endif
+    breaksw
+case 'SHASTA':
+    wc -l $PBS_NODEFILE
+    uniq  $PBS_NODEFILE
+    setenv LD_LIBRARY_PATH           ${CRAY_LD_LIBRARY_PATH}:${LD_LIBRARY_PATH}
+    setenv MPICH_VERSION_DISPLAY     1
+    setenv MPICH_ENV_DISPLAY         1
+    setenv MPICH_ABORT_ON_ERROR      1
+    setenv ATP_ENABLED               1
+    setenv NO_STOP_MESSAGE           1
+    if ($NOMP == 0 || $NOMP == 1) then
+      setenv OMP_NUM_THREADS 1
+#     128 cores per dual-socket node, 16 cores per NUMA node
+      setenv CPU_NUMA "112-127:48-63:96-111:32-47:80-95:16-31:64-79:0-15"
+      time mpiexec --mem-bind local --cpu-bind list:$CPU_NUMA -n $NMPI ./${HEXE}
+    else
+      setenv OMP_NUM_THREADS $NOMP
+      setenv OMP_STACKSIZE   127M
+      setenv KMP_AFFINITY    disabled
+      time mpiexec -mem-bind local -n $NMPI -depth $NOMP ./${HEXE}
     endif
     breaksw
 case 'AIX':

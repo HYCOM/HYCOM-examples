@@ -20,18 +20,18 @@ setenv K  41
 setenv E  012
 setenv X  01.2
 setenv P  HYCOM-examples/GOMb0.08/expt_01.2/data
-setenv D  /p/home/abozec/HYCOM-examples/GOMb0.08/expt_01.2/data
-setenv S  /p/work1/abozec/HYCOM-examples/GOMb0.08/expt_01.2/data/
-setenv DS /p/work1/abozec/HYCOM-examples/GOMb0.08/expt_01.2/../datasets
+setenv D  /p/home/${user}/HYCOM-examples/GOMb0.08/expt_01.2/data
+setenv S  /p/work1/${user}/HYCOM-examples/GOMb0.08/expt_01.2/data/
+setenv DS /p/work1/${user}/HYCOM-examples/GOMb0.08/expt_01.2/../datasets
 setenv N  cfsr_gom
-setenv W  /p/work1/abozec/HYCOM-examples/datasets/CFSR_GOM 
+setenv W  /p/work1/${user}/HYCOM-examples/datasets/CFSR_GOM 
 setenv MAKE_FORCE 1
 
 # --- ARCHIVE is logical for archive transfer to Newton.
 # --- QSUBMIT is local submit command.
 setenv ARCHIVE 0 
-#setenv QSUBMIT qsub
-setenv QSUBMIT ~wallcraf/bin/q_navo
+setenv QSUBMIT qsub
+#setenv QSUBMIT ~wallcraf/bin/q_navo
 
 # --- mnsqa  is logical for postproc mean and std deviation arch.
 # --- mnsqe  is logical for postproc mean and std deviation arche.

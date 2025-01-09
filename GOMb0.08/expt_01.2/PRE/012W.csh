@@ -22,7 +22,7 @@ C --- prebuild this script similar to a model script
 C
 C --- EX is experiment directory
 C
-setenv EX /p/home/abozec/HYCOM-examples/GOMb0.08/expt_01.2
+setenv EX ~/HYCOM-examples/GOMb0.08/expt_01.2
 C
 C --- E is expt number.
 C --- P is primary path.
@@ -41,7 +41,7 @@ case 'SunOS':
 C   assumes /usr/5bin is before /bin and /usr/bin in PATH.
     breaksw
 case 'Linux':
-case 'OSF1':
+case 'SHASTA':
     breaksw
 case 'IRIX64':
     breaksw
@@ -73,7 +73,7 @@ case 'SunOS':
 case 'Linux':
 case 'HPE':
 case 'XT4':
-case 'OSF1':
+case 'SHASTA':
 case 'AIX':
 case 'unicos':
 case 'unicosmk':
@@ -209,7 +209,7 @@ C
 switch ($OS)
 case 'SunOS':
 case 'Linux':
-case 'OSF1':
+case 'SHASTA':
 case 'AIX':
 case 'HPE':
 case 'XT4':
