@@ -165,6 +165,7 @@ sigma:84-14m; depth_GOMb0.08_07; HYCOM 2.3.01; Nested in monthly GLBb0.08 53.X;
    0.0    'vertmx' = diffusion velocity (m/s) for momentum at MICOM M.L.base
    0.0	  'cbar  ' = rms flow speed     (m/s) for linear bottom friction
   -2.5e-3 'cb    ' = coefficient of quadratic bottom friction (-ve input)
+00000000  'cbtidc' = tidal velocities: 1 digit per constituent (Q1K2P1N2O1K1S2M2)
    0.0	  'drglim' = limiter for explicit friction (1.0 none, 0.0 implicit)
   10.0	  'thkbot' = thickness of bottom boundary layer (m)
    0.02	  'sigjmp' = minimum density jump across interfaces  (kg/m**3)

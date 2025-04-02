@@ -1,7 +1,7 @@
 CORE2  NY ; WOA13 SSS relax; SSS relax balanced; EMP balanced; ICE LOAN
 17T Sigma2*; WOA13 Jan init; KPP; SeaWiFS chl;
 Z(7):1-7,Z(16):8,Z(2):10-16,Z(13):dp00/f/x=36/1.18/262;Z(3):400-600m;
-sigma:84-14m; depth_GLBt0.72_15; 2.3.01
+sigma:84-14m; depth_GLBt0.72_15; 2.3.01; epmass=2
   23	  'iversn' = hycom version number x10
  012	  'iexpt ' = experiment number x10
  500	  'idm   ' = longitudinal array size
@@ -131,11 +131,13 @@ sigma:84-14m; depth_GLBt0.72_15; 2.3.01
    0      'hybraf' = HYBGEN: Robert-Asselin flag   (0=F,1=T)
    8.0	  'hybrlx' = HYBGEN: inverse relaxation coefficient (time steps)
    0.01	  'hybiso' = HYBGEN: Use PCM if layer is within hybiso of target density
+   1.0	  'hybthn' = HYBGEN: ratio of layer thicknesses to select the thiner
+   0.0	  'hybthk' = HYBGEN: thick-thin-thick ratio to expand the thin layer
    3	  'hybmap' = HYBGEN: remapper  flag (0=PCM, 1=PLM,  2=PPM, 3=WENO-like)
    0	  'hybflg' = HYBGEN: generator flag (0=T&S, 1=th&S, 2=th&T)
    0	  'advflg' = thermal advection flag (0=T&S, 1=th&S, 2=th&T)
    2	  'advtyp' = scalar  advection type (0=PCM,1=MPDATA,2=FCT2,4=FCT4)
-   2	  'momtyp' = momentum advection type (2=2nd order, 4=4th order)
+   2	  'momtyp' = momentum advection type (2=2nd; 3=S.QUICK; 4=M.S.QUICK)
   -1.0	  'slip  ' = +1 for free-slip, -1 for non-slip boundary conditions
    0.05	  'visco2' = deformation-dependent Laplacian  viscosity factor
    0.0	  'visco4' = deformation-dependent biharmonic viscosity factor
@@ -149,6 +151,7 @@ sigma:84-14m; depth_GLBt0.72_15; 2.3.01
    0.0    'vertmx' = diffusion velocity (m/s) for momentum at MICOM M.L.base
    0.0	  'cbar  ' = rms flow speed     (m/s) for linear bottom friction
    2.5e-3 'cb    ' = coefficient of quadratic bottom friction (-ve input)
+00000000  'cbtidc' = tidal velocities: 1 digit per constituent (Q1K2P1N2O1K1S2M2)
    0.0	  'drglim' = limiter for explicit friction (1.0 none, 0.0 implicit)
   10.0	  'thkbot' = thickness of bottom boundary layer (m)
    0.02	  'sigjmp' = minimum density jump across interfaces  (kg/m**3)
@@ -169,6 +172,8 @@ sigma:84-14m; depth_GLBt0.72_15; 2.3.01
    0      'ishelf' = ice shelf flag    (0=none,1=ice shelf over ocean)
    0	  'ntracr' = number of tracers (0=none,negative to initialize)
    0	  'trcflg' = tracer flags      (one digit per tr, most sig. replicated)
+   0	  'mtracr' = number of diagnostic tracers
+   0	  'mstrcr' = number of surface    tracers
  180      'tsofrq' = number of time steps between anti-drift offset calcs
    0.0    'tofset' = temperature anti-drift offset (degC/century)
    0.0    'sofset' = salnity     anti-drift offset  (psu/century)
@@ -216,7 +221,7 @@ sigma:84-14m; depth_GLBt0.72_15; 2.3.01
 4.63e-6   'tbvar ' = FLOATS: horizontal turb. vel. variance scale (m**2/s**2)
    0.4    'tdecri' = FLOATS: inverse decorrelation time scale (1/day)
    0      'lbflag' = lateral barotropic bndy flag (0=none, 1=port, 2=input)
-   0      'lbmont' = baro nesting archives have sshflg=2
+   0      'lbmont' = baro nesting archives have sshflg=2 (0=F,1=T)
    0      'tidflg' = TIDES: tidal forcing flag    (0=none,1=open-bdy,2=bdy&body)
    0      'tidein' = TIDES: tide field input flag (0=no;1=yes;2=sal)
 00000001  'tidcon' = TIDES: 1 digit per (Q1K2P1N2O1K1S2M2), 0=off,1=on
@@ -224,16 +229,28 @@ sigma:84-14m; depth_GLBt0.72_15; 2.3.01
    0      'tiddrg' = TIDES: tidal drag flag (0=no;1=scalar;2=tensor)
  500.0    'thkdrg' = TIDES: thickness of tidal drag bottom boundary layer (m)
    0.0    'drgscl' = TIDES: scale factor for tidal drag (0.0 when tiddrg=0)
+   0.0    'tidfm2' = TIDES: M2 streaming filter bandwidth (0.0 for no filter)
+   0.0    'tidfs2' = TIDES: S2 streaming filter bandwidth (0.0 for no filter)
+   0.0    'tidfk1' = TIDES: K1 streaming filter bandwidth (0.0 for no filter)
+   0.0    'tidfo1' = TIDES: O1 streaming filter bandwidth (0.0 for no filter)
+   0.0    'drgscm' = TIDES: scale factor for M2 tidal drag (0.0 when tidfk1=0.0)
+   0.0    'drgscs' = TIDES: scale factor for S2 tidal drag (0.0 when tidfk1=0.0)
+   0.0    'drgsck' = TIDES: scale factor for K1 tidal drag (0.0 when tidfk1=0.0)
+   0.0    'drgsco' = TIDES: scale factor for O1 tidal drag (0.0 when tidfk1=0.0)
    1	  'tidgen' = TIDES: generic time (0=F,1=T)
    1.0    'tidrmp' = TIDES:            ramp time  (days)
    0.0    'tid_t0' = TIDES: origin for ramp time  (model day)
+   0      'tidnud' = TIDES: tide nudging flag (0=off;2=49hr;3=filter)
+   1.0    'nudrmp' = TIDES:    nudging ramp time (days)
+   0.0    'nud_t0' = TIDES: origin for nudg time (model day)
   12	  'clmflg' = climatology frequency flag   (6=bimonthly, 12=monthly)
-   -5	  'wndflg' = wind stress input flag (0=none,1=uv-g,2,3=p-grd,4,5=wnd10m)
+  -5	  'wndflg' = wind stress input flag (0=none,1=uv-g,2,3=p-grd,4,5=wnd10m)
+   0.0	  'ocnscl' = scale factor for Uocn in relative wind (0.0: absolute wind)
    4      'ustflg' = ustar   forcing   flag        (3=input,1,2=wndspd,4=stress)
    5      'flxflg' = thermal forcing   flag (0=none,3=net_flx,1-2,4-6=sst-based)
    5      'empflg' = E-P     forcing   flag (0=none,3=net_E-P,1-2,4-6=sst-bas_E)
    0.0    'emptgt' = E-P     balance target (mm/week, into ocean)
-   1      'empbal' = E-P     balance   flag (0=none,1=offset,2=scale)
+   0      'empbal' = E-P     balance   flag (0=none,1=offset,2=scale)
    0      'dswflg' = diurnal shortwave flag (0=none,1=daily to diurnal corr.)
    2      'albflg' = ocean albedo      flag (0=none,1=const,2=L&Y)
    1	  'sssflg' = SSS relaxation    flag (0=none,1=clim,-1=clim&rmx)
@@ -249,4 +266,4 @@ sigma:84-14m; depth_GLBt0.72_15; 2.3.01
    0	  'relax ' = activate lateral boundary nudging    (0=F,1=T)
    0	  'trcrlx' = activate lat. bound. tracer nudging  (0=F,1=T)
    1	  'priver' = rivers as a precipitation bogas      (0=F,1=T)
-   1      'epmass' = treat evap-precip as a mass exchange (0=F,1=T)
+   2      'epmass' = E-P mass exchange flag (0=no,1=yes,2=river)
