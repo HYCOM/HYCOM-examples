@@ -42,7 +42,7 @@ tar xvf relax_010.tar.gz
 wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_SSH.tar.gz
 tar xvf relax_SSH.tar.gz
 
-# --- get bottom drag files
+# --- get bottom drag files (and tidal drag files)
 # --- N.B.: can be created using ${R}/relax/DRAG scripts
 wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_DRAG.tar.gz
 tar xvf relax_DRAG.tar.gz
