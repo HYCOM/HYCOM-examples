@@ -100,11 +100,11 @@ tar xvf relax_SSSRMX.tar.gz
 
 # --- get nest files (DAILY)
 # --- N.B.: can be created using GLBy0.08/subregion scripts
-# --- data availbale from 2024/09 to 2025/05,i.e. 124i,124j,124k,124l,125a,125b,125c,125d,125e 
+# --- data available from 2024/09 to 2025/05,i.e. 124i,124j,124k,124l,125a,125b,125c,125d,125e 
 # --- HYCOM-examples/datasets/nest
 cd nest/
-wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/subregion_espc/archm_125a_espc.tar.gz
-tar xvf archm_125a_espc.tar.gz
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/subregion_espc/archm_124i_espc.tar.gz
+tar xvf archm_124i_espc.tar.gz
 cd ../
 
 # --- get topo data

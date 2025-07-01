@@ -21,7 +21,7 @@ date
 # --- U  is the target   region
 # --- E  is the experiment number
 # --- Y  is year
-# --- P  is month
+# --- P  is date of the initial condition
 # --- S  is the location to run from
 # --- D  is the location of the original   archive files
 # --- N  is the location of the subregion  archive files
@@ -33,7 +33,8 @@ date
 setenv R GLBy0.08 
 setenv U GOMb0.08
 setenv E 530 
-setenv Y 125 
+setenv Y 125
+setenv P 20240901 
 #
 setenv YY `echo ${Y} | awk '{printf("%04d", $1+1900)}'`
 setenv X  `echo ${E} | awk '{printf("%04.1f", $1*0.1)}'`
@@ -80,17 +81,16 @@ endif
 #
 #
 
-foreach P ( 001 ) 
 #   no leading expt number for nesting files
-    touch   ${N}/archm.2025_${P}_12_restart.b
-    /bin/rm ${N}/archm.2025_${P}_12_restart.[ab]
+    touch   ${N}/archm.${P}_restart.b
+    /bin/rm ${N}/archm.${P}_restart.[ab]
     /usr/bin/time ${BINRUN} ${TOOLS}/subregion/src/isubaregion <<E-o-D
 ${TU}/regional.grid.a
 ${TU}/regional.gmapi_${R}.a
 ${TU}/depth_${U}_${VU}.a
 regional.depth.a
-${D}/US058GCOM-OPSnce.espc-d-031-hycom_fcst_glby008_2025010112_M0000_archm.a
-${N}/archm.2025_${P}_12_restart.a
+${D}/US058GCOM-OPSnce.espc-d-031-hycom_fcst_glby008_${P}12_M0000_archm.a
+${N}/archm.${P}_restart.a
 ${R} interpolated to ${U}
  263	  'idm   ' = target longitudinal array size
  193	  'jdm   ' = target latitudinal  array size
@@ -98,14 +98,13 @@ ${R} interpolated to ${U}
    0	  'smooth' = smooth interface depths    (0=F,1=T)
 E-o-D
 
-    touch  ${N}/archm.2025_${P}_12_restart.b
-    if (-z ${N}/archm.2025_${P}_12_restart.b) then
-      echo "missing archive file: " ${N}/archm.2025_${P}_12_restart.b
+    touch  ${N}/archm.${P}_restart.b
+    if (-z ${N}/archm.${P}_restart.b) then
+      echo "missing archive file: " ${N}/archm.${P}_restart.b
       exit (2)
     endif
 
     cd ${S}
   date
-end
 
 \rm region*

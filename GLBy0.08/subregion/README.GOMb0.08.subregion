@@ -22,7 +22,7 @@ than for T/S/p/u/v.
 
 The nested domain must be (the same resolution as or) finer than the original. Don't forget 
 to allow for the fact that the buffer zone (typically at least 10 coarse grid points 
-defined by relax/010/nest_rmu.[ab]) should probably be outside the region of high interest.
+defined by relax/014/nest_rmu.[ab]) should probably be outside the region of high interest.
 
 To facilitate the interpolation from the coarser to the finer domain, we first create an 
 index map file between the 2 domains. In ~HYCOM-examples/GLBy0.08/subregion, edit gmapi.csh 
