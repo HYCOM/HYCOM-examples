@@ -1,0 +1,178 @@
+setenv DS /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo
+setenv D /p/home/wallcraf/HYCOM-examples/GOMb0.08/topo/partit/15
+setenv T `echo $cwd | awk -f depth.awk`
+awk -f depth.awk
+echo /p/home/wallcraf/HYCOM-examples/GOMb0.08/topo/partit/15
+setenv TV `echo ${T} | cut -d"_" -f 3-`
+cut -d_ -f 3-
+echo depth_GOMb0.08_15
+cd /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/partit/15
+echo /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/partit/15
+/p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/partit/15
+head -1 S04/patch.input_004
+head: cannot open 'S04/patch.input_004' for reading: No such file or directory
+foreach f ( S*/patch.input_* )
+head -2 S04/patch.input_008
+tail -1
+end
+head -2 S04/patch.input_012
+tail -1
+end
+head -2 S04/patch.input_016
+tail -1
+end
+head -2 S04/patch.input_020
+tail -1
+end
+head -2 S05/patch.input_010
+tail -1
+end
+head -2 S05/patch.input_015
+tail -1
+end
+head -2 S05/patch.input_020
+tail -1
+end
+head -2 S05/patch.input_025
+tail -1
+end
+head -2 S05/patch.input_030
+tail -1
+end
+head -2 S06/patch.input_018
+tail -1
+end
+head -2 S06/patch.input_024
+tail -1
+end
+head -2 S06/patch.input_030
+tail -1
+end
+head -2 S06/patch.input_036
+tail -1
+end
+head -2 S06/patch.input_041
+tail -1
+end
+head -2 S07/patch.input_028
+tail -1
+end
+head -2 S07/patch.input_035
+tail -1
+end
+head -2 S07/patch.input_041
+tail -1
+end
+head -2 S07/patch.input_048
+tail -1
+end
+head -2 S07/patch.input_053
+tail -1
+end
+head -2 S08/patch.input_032
+tail -1
+end
+head -2 S08/patch.input_039
+tail -1
+end
+head -2 S08/patch.input_047
+tail -1
+end
+head -2 S08/patch.input_054
+tail -1
+end
+head -2 S08/patch.input_060
+tail -1
+end
+head -2 S09/patch.input_044
+tail -1
+end
+head -2 S09/patch.input_053
+tail -1
+end
+head -2 S09/patch.input_062
+tail -1
+end
+head -2 S09/patch.input_069
+tail -1
+end
+head -2 S09/patch.input_076
+tail -1
+end
+head -2 S10/patch.input_059
+tail -1
+end
+head -2 S10/patch.input_068
+tail -1
+end
+head -2 S10/patch.input_077
+tail -1
+end
+head -2 S10/patch.input_084
+tail -1
+end
+head -2 S10/patch.input_094
+tail -1
+end
+head -2 S11/patch.input_073
+tail -1
+end
+head -2 S11/patch.input_083
+tail -1
+end
+head -2 S11/patch.input_091
+tail -1
+end
+head -2 S11/patch.input_102
+tail -1
+end
+head -2 S11/patch.input_112
+tail -1
+end
+head -2 S12/patch.input_081
+tail -1
+end
+head -2 S12/patch.input_091
+tail -1
+end
+head -2 S12/patch.input_101
+tail -1
+end
+head -2 S12/patch.input_112
+tail -1
+end
+head -2 S12/patch.input_122
+tail -1
+end
+head -2 S13/patch.input_096
+tail -1
+end
+head -2 S13/patch.input_107
+tail -1
+end
+head -2 S13/patch.input_119
+tail -1
+end
+head -2 S13/patch.input_130
+tail -1
+end
+head -2 S13/patch.input_143
+tail -1
+end
+head -2 S14/patch.input_117
+tail -1
+end
+head -2 S14/patch.input_130
+tail -1
+end
+head -2 S14/patch.input_141
+tail -1
+end
+head -2 S14/patch.input_155
+tail -1
+end
+head -2 S14/patch.input_168
+tail -1
+end
+sort -n -k 1,10 size_S.tmp
+/bin/rm size_S.tmp

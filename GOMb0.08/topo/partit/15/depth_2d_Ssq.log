@@ -1,0 +1,1885 @@
+setenv DS /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo
+setenv D /p/home/wallcraf/HYCOM-examples/GOMb0.08/topo/partit/15
+setenv T `echo $cwd | awk -f depth.awk`
+awk -f depth.awk
+echo /p/home/wallcraf/HYCOM-examples/GOMb0.08/topo/partit/15
+setenv TV `echo ${T} | cut -d"_" -f 3-`
+cut -d_ -f 3-
+echo depth_GOMb0.08_15
+mkdir -p /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/partit/15
+cd /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/partit/15
+echo /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/partit/15
+/p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/partit/15
+/bin/rm -f regional.grid.a regional.grid.b
+ln -s /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/regional.grid.a .
+ln -s /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/regional.grid.b .
+setenv FOR051 /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/depth_GOMb0.08_15.b
+setenv FOR051A /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/depth_GOMb0.08_15.a
+setenv NX `head -n 1 regional.grid.b | sed -e "s/^  *//g" -e "s/ .*//g"`
+sed -e s/^  *//g -e s/ .*//g
+head -n 1 regional.grid.b
+setenv NY `head -n 2 regional.grid.b | tail -n 1 | sed -e "s/^  *//g" -e "s/ .*//g"`
+head -n 2 regional.grid.b
+sed -e s/^  *//g -e s/ .*//g
+tail -n 1
+echo 263 193
+263 193
+@ i = 4
+while ( 4 < = 14 )
+setenv n `echo $i | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+echo 4
+@ i = 4 + 1
+mkdir -p S04
+setenv NI `expr $n \* $NY`
+expr 04 * 193
+setenv M `expr $NI / $NX`
+expr 772 / 263
+echo M =, 2
+M =, 2
+@ k = -1
+while ( -1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 2 + -1
+echo m =, 01
+m =, 01
+@ k = -1 + 1
+echo -04 -01 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+error - npe,mpe must be between 1 and 512
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+head: cannot open 'fort.21' for reading: No such file or directory
+mv fort.21 S04/patch.input_
+mv: cannot stat 'fort.21': No such file or directory
+end
+while ( 0 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 2 + 0
+echo m =, 02
+m =, 02
+@ k = 0 + 1
+echo -04 -02 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+     8     4     2   263   193    66    97     0    3108    6013    4514
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S04/patch.input_008
+end
+while ( 1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 2 + 1
+echo m =, 03
+m =, 03
+@ k = 1 + 1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+echo -04 -03 9.1
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    12     4     3   263   193    66    65     0    1269    4224    3009
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S04/patch.input_012
+end
+while ( 2 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 2 + 2
+echo m =, 04
+m =, 04
+@ k = 2 + 1
+echo -04 -04 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    16     4     4   263   193    66    49     0     445    3234    2257
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S04/patch.input_016
+end
+while ( 3 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 2 + 3
+echo m =, 05
+m =, 05
+@ k = 3 + 1
+echo -04 -05 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    20     4     5   263   193    66    39     0     134    2574    1805
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S04/patch.input_020
+end
+while ( 4 < = 3 )
+end
+while ( 5 < = 14 )
+setenv n `echo $i | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+echo 5
+@ i = 5 + 1
+mkdir -p S05
+setenv NI `expr $n \* $NY`
+expr 05 * 193
+setenv M `expr $NI / $NX`
+expr 965 / 263
+echo M =, 3
+M =, 3
+@ k = -1
+while ( -1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 3 + -1
+echo m =, 02
+m =, 02
+@ k = -1 + 1
+echo -05 -02 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    10     5     2   263   193    53    97     0    2277    4653    3611
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S05/patch.input_010
+end
+while ( 0 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 3 + 0
+echo m =, 03
+m =, 03
+@ k = 0 + 1
+echo -05 -03 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    15     5     3   263   193    53    65     0     854    3392    2407
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S05/patch.input_015
+end
+while ( 1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 3 + 1
+echo m =, 04
+m =, 04
+@ k = 1 + 1
+echo -05 -04 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    20     5     4   263   193    53    49     0     238    2597    1805
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S05/patch.input_020
+end
+while ( 2 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 3 + 2
+echo m =, 05
+m =, 05
+@ k = 2 + 1
+echo -05 -05 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    25     5     5   263   193    53    39     0      57    2067    1444
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S05/patch.input_025
+end
+while ( 3 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 3 + 3
+echo m =, 06
+m =, 06
+@ k = 3 + 1
+echo -05 -06 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    30     5     6   263   193    53    33     0       0    1749    1203
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S05/patch.input_030
+end
+while ( 4 < = 3 )
+end
+while ( 6 < = 14 )
+setenv n `echo $i | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+echo 6
+@ i = 6 + 1
+mkdir -p S06
+setenv NI `expr $n \* $NY`
+expr 06 * 193
+setenv M `expr $NI / $NX`
+expr 1158 / 263
+echo M =, 4
+M =, 4
+@ k = -1
+while ( -1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 4 + -1
+echo m =, 03
+m =, 03
+@ k = -1 + 1
+echo -06 -03 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    18     6     3   263   193    44    65     0     584    2816    2006
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+awk {printf("%3.3d\n",$1)}
+tail -1
+head -2 fort.21
+mv fort.21 S06/patch.input_018
+end
+while ( 0 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 4 + 0
+echo m =, 04
+m =, 04
+@ k = 0 + 1
+echo -06 -04 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    24     6     4   263   193    44    49     0     112    2156    1504
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S06/patch.input_024
+end
+while ( 1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 4 + 1
+echo m =, 05
+m =, 05
+@ k = 1 + 1
+echo -06 -05 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    30     6     5   263   193    44    39     0      21    1716    1203
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S06/patch.input_030
+end
+while ( 2 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 4 + 2
+echo m =, 06
+m =, 06
+@ k = 2 + 1
+echo -06 -06 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    36     6     6   263   193    44    33     0       0    1452    1003
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S06/patch.input_036
+end
+while ( 3 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 4 + 3
+echo m =, 07
+m =, 07
+@ k = 3 + 1
+echo -06 -07 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    41     6     7   263   193    44    28     0       0    1232     880
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S06/patch.input_041
+end
+while ( 4 < = 3 )
+end
+while ( 7 < = 14 )
+setenv n `echo $i | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+echo 7
+@ i = 7 + 1
+mkdir -p S07
+setenv NI `expr $n \* $NY`
+expr 07 * 193
+setenv M `expr $NI / $NX`
+expr 1351 / 263
+echo M =, 5
+M =, 5
+@ k = -1
+while ( -1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 5 + -1
+echo m =, 04
+m =, 04
+@ k = -1 + 1
+echo -07 -04 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    28     7     4   263   193    38    49     0      28    1862    1289
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S07/patch.input_028
+end
+while ( 0 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 5 + 0
+echo m =, 05
+m =, 05
+@ k = 0 + 1
+echo -07 -05 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    35     7     5   263   193    38    39     0       0    1482    1031
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S07/patch.input_035
+end
+while ( 1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 5 + 1
+echo m =, 06
+m =, 06
+@ k = 1 + 1
+echo -07 -06 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    41     7     6   263   193    38    33     0       2    1254     880
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S07/patch.input_041
+end
+while ( 2 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 5 + 2
+echo m =, 07
+m =, 07
+@ k = 2 + 1
+echo -07 -07 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    48     7     7   263   193    38    28     0       0    1064     752
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S07/patch.input_048
+end
+while ( 3 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 5 + 3
+echo m =, 08
+m =, 08
+@ k = 3 + 1
+echo -07 -08 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            8           3           5          29          29
+   shift: i,pt,px =            3          76         105
+   shift: i,pt,px =            4         114         143
+   shift: i,pt,px =            5         152           0
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    53     7     8   263   193    38    25     0       9     950     681
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S07/patch.input_053
+end
+while ( 4 < = 3 )
+end
+while ( 8 < = 14 )
+setenv n `echo $i | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+echo 8
+@ i = 8 + 1
+mkdir -p S08
+setenv NI `expr $n \* $NY`
+expr 08 * 193
+setenv M `expr $NI / $NX`
+expr 1544 / 263
+echo M =, 5
+M =, 5
+@ k = -1
+while ( -1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 5 + -1
+echo m =, 04
+m =, 04
+@ k = -1 + 1
+echo -08 -04 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    32     8     4   263   193    33    49     0       9    1617    1128
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S08/patch.input_032
+end
+while ( 0 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 5 + 0
+echo m =, 05
+m =, 05
+@ k = 0 + 1
+echo -08 -05 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    39     8     5   263   193    33    39     0      43    1287     926
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S08/patch.input_039
+end
+while ( 1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 5 + 1
+echo m =, 06
+m =, 06
+@ k = 1 + 1
+echo -08 -06 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    47     8     6   263   193    33    33     0       1    1089     768
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S08/patch.input_047
+end
+while ( 2 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 5 + 2
+echo m =, 07
+m =, 07
+@ k = 2 + 1
+echo -08 -07 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    54     8     7   263   193    33    28     0       0     924     668
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S08/patch.input_054
+end
+while ( 3 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 5 + 3
+echo m =, 08
+m =, 08
+@ k = 3 + 1
+echo -08 -08 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            8           4           5           5          26
+ SHIFT: j,n,nl,il =            8           5           4           7          28
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    60     8     8   263   193    33    25     0       9     825     601
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S08/patch.input_060
+end
+while ( 4 < = 3 )
+end
+while ( 9 < = 14 )
+setenv n `echo $i | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+echo 9
+@ i = 9 + 1
+mkdir -p S09
+setenv NI `expr $n \* $NY`
+expr 09 * 193
+setenv M `expr $NI / $NX`
+expr 1737 / 263
+echo M =, 6
+M =, 6
+@ k = -1
+while ( -1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 6 + -1
+echo m =, 05
+m =, 05
+@ k = -1 + 1
+echo -09 -05 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    44     9     5   263   193    30    39     0      64    1170     820
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S09/patch.input_044
+end
+while ( 0 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 6 + 0
+echo m =, 06
+m =, 06
+@ k = 0 + 1
+echo -09 -06 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    53     9     6   263   193    30    33     0       1     990     681
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S09/patch.input_053
+end
+while ( 1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 6 + 1
+echo m =, 07
+m =, 07
+@ k = 1 + 1
+echo -09 -07 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    62     9     7   263   193    30    28     0       0     840     582
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S09/patch.input_062
+end
+while ( 2 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 6 + 2
+echo m =, 08
+m =, 08
+@ k = 2 + 1
+echo -09 -08 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    69     9     8   263   193    30    25     0       0     750     523
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S09/patch.input_069
+end
+while ( 3 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 6 + 3
+echo m =, 09
+m =, 09
+@ k = 3 + 1
+echo -09 -09 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            9           4           6          19           8
+   shift: i,pt,px =            4          88         107
+   shift: i,pt,px =            5         118         137
+   shift: i,pt,px =            6         148           0
+ SHIFT: j,n,nl,il =            9           5           4          12          30
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    76     9     9   263   193    30    22     0       0     660     475
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S09/patch.input_076
+end
+while ( 4 < = 3 )
+end
+while ( 10 < = 14 )
+setenv n `echo $i | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+echo 10
+@ i = 10 + 1
+mkdir -p S10
+setenv NI `expr $n \* $NY`
+expr 10 * 193
+setenv M `expr $NI / $NX`
+expr 1930 / 263
+echo M =, 7
+M =, 7
+@ k = -1
+while ( -1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 7 + -1
+echo m =, 06
+m =, 06
+@ k = -1 + 1
+echo -10 -06 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    59    10     6   263   193    27    33     0       0     891     612
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S10/patch.input_059
+end
+while ( 0 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 7 + 0
+echo m =, 07
+m =, 07
+@ k = 0 + 1
+echo -10 -07 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    68    10     7   263   193    27    28     0       0     756     531
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S10/patch.input_068
+end
+while ( 1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 7 + 1
+echo m =, 08
+m =, 08
+@ k = 1 + 1
+echo -10 -08 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    77    10     8   263   193    27    25     0       0     675     469
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S10/patch.input_077
+end
+while ( 2 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 7 + 2
+echo m =, 09
+m =, 09
+@ k = 2 + 1
+echo -10 -09 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            9           5           6           1          22
+ SHIFT: j,n,nl,il =            9           6           5           5          26
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    84    10     9   263   193    27    22     0       0     594     429
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S10/patch.input_084
+end
+while ( 3 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 7 + 3
+echo m =, 10
+m =, 10
+@ k = 3 + 1
+echo -10 -10 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =           10           5           6           4          19
+ SHIFT: j,n,nl,il =           10           6           5           8          23
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    94    10    10   263   193    27    20     0       0     540     384
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S10/patch.input_094
+end
+while ( 4 < = 3 )
+end
+while ( 11 < = 14 )
+setenv n `echo $i | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+echo 11
+@ i = 11 + 1
+mkdir -p S11
+setenv NI `expr $n \* $NY`
+expr 11 * 193
+setenv M `expr $NI / $NX`
+expr 2123 / 263
+echo M =, 8
+M =, 8
+@ k = -1
+while ( -1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 8 + -1
+echo m =, 07
+m =, 07
+@ k = -1 + 1
+echo -11 -07 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    73    11     7   263   193    24    28     0       0     672     494
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S11/patch.input_073
+end
+while ( 0 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 8 + 0
+echo m =, 08
+m =, 08
+@ k = 0 + 1
+echo -11 -08 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    83    11     8   263   193    24    25     0       0     600     435
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S11/patch.input_083
+end
+while ( 1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 8 + 1
+echo m =, 09
+m =, 09
+@ k = 1 + 1
+echo -11 -09 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            9           5           7          10          10
+   shift: i,pt,px =            5          97         107
+   shift: i,pt,px =            6         121         131
+   shift: i,pt,px =            7         145           0
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    91    11     9   263   193    24    22     0       0     528     396
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S11/patch.input_091
+end
+while ( 2 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 8 + 2
+echo m =, 10
+m =, 10
+@ k = 2 + 1
+echo -11 -10 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =           10           5           7          13           7
+   shift: i,pt,px =            5          97         110
+   shift: i,pt,px =            6         121         134
+   shift: i,pt,px =            7         145           0
+ SHIFT: j,n,nl,il =           10           6           5           6          24
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   102    11    10   263   193    24    20     0       0     480     354
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S11/patch.input_102
+end
+while ( 3 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 8 + 3
+echo m =, 11
+m =, 11
+@ k = 3 + 1
+echo -11 -11 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   112    11    11   263   193    24    18     0       0     432     322
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S11/patch.input_112
+end
+while ( 4 < = 3 )
+end
+while ( 12 < = 14 )
+setenv n `echo $i | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+echo 12
+@ i = 12 + 1
+mkdir -p S12
+setenv NI `expr $n \* $NY`
+expr 12 * 193
+setenv M `expr $NI / $NX`
+expr 2316 / 263
+echo M =, 8
+M =, 8
+@ k = -1
+while ( -1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 8 + -1
+echo m =, 07
+m =, 07
+@ k = -1 + 1
+echo -12 -07 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            7           2           3          19          20
+ shift: j,n,nl,il =            7           5           9          16           6
+   shift: i,pt,px =            5          89         105
+   shift: i,pt,px =            6         111         127
+   shift: i,pt,px =            7         133         149
+   shift: i,pt,px =            8         155         171
+   shift: i,pt,px =            9         177           0
+ SHIFT: j,n,nl,il =            7           8           5          10          22
+ SHIFT: j,n,nl,il =            7           3           2           2           3
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    81    12     7   263   193    22    28     0       0     616     445
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S12/patch.input_081
+end
+while ( 0 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 8 + 0
+echo m =, 08
+m =, 08
+@ k = 0 + 1
+echo -12 -08 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            8           5           9          16           4
+   shift: i,pt,px =            5          89         105
+   shift: i,pt,px =            6         111         127
+   shift: i,pt,px =            7         133         149
+   shift: i,pt,px =            8         155         171
+   shift: i,pt,px =            9         177           0
+ SHIFT: j,n,nl,il =            8           8           5          12          22
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    91    12     8   263   193    22    25     0       0     550     396
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S12/patch.input_091
+end
+while ( 1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 8 + 1
+echo m =, 09
+m =, 09
+@ k = 1 + 1
+echo -12 -09 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            9           5           7          18          22
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   101    12     9   263   193    22    22     0       0     484     357
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S12/patch.input_101
+end
+while ( 2 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 8 + 2
+echo m =, 10
+m =, 10
+@ k = 2 + 1
+echo -12 -10 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =           10           5           7          21          19
+   shift: i,pt,px =            5          89         110
+   shift: i,pt,px =            6         111         132
+   shift: i,pt,px =            7         133           0
+ SHIFT: j,n,nl,il =           10           6           5           2          22
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   112    12    10   263   193    22    20     0       0     440     322
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S12/patch.input_112
+end
+while ( 3 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 8 + 3
+echo m =, 11
+m =, 11
+@ k = 3 + 1
+echo -12 -11 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =           10           2           9          17          11
+   shift: i,pt,px =            2          23          40
+   shift: i,pt,px =            3          45          62
+   shift: i,pt,px =            4          67          84
+   shift: i,pt,px =            5          89         106
+   shift: i,pt,px =            6         111         128
+   shift: i,pt,px =            7         133         150
+   shift: i,pt,px =            8         155         172
+   shift: i,pt,px =            9         177           0
+ SHIFT: j,n,nl,il =           10           8           2           6          22
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   122    12    11   263   193    22    18     0       0     396     296
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S12/patch.input_122
+end
+while ( 4 < = 3 )
+end
+while ( 13 < = 14 )
+setenv n `echo $i | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+echo 13
+@ i = 13 + 1
+mkdir -p S13
+setenv NI `expr $n \* $NY`
+expr 13 * 193
+setenv M `expr $NI / $NX`
+expr 2509 / 263
+echo M =, 9
+M =, 9
+@ k = -1
+while ( -1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 9 + -1
+echo m =, 08
+m =, 08
+@ k = -1 + 1
+echo -13 -08 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ SHIFT: j,n,nl,il =            1           5           1           6           6
+   shift: i,pt,px =            5          81          75
+   shift: i,pt,px =            4          61          55
+   shift: i,pt,px =            3          41          35
+   shift: i,pt,px =            2          21          15
+   shift: i,pt,px =            1           1           0
+ shift: j,n,nl,il =            8           6           9           3          18
+ SHIFT: j,n,nl,il =            8           9           6           3          17
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    96    13     8   263   193    21    25     0       0     525     376
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S13/patch.input_096
+end
+while ( 0 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 9 + 0
+echo m =, 09
+m =, 09
+@ k = 0 + 1
+echo -13 -09 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ SHIFT: j,n,nl,il =            1           5           1           6           3
+   shift: i,pt,px =            5          81          75
+   shift: i,pt,px =            4          61          55
+   shift: i,pt,px =            3          41          35
+   shift: i,pt,px =            2          21          15
+   shift: i,pt,px =            1           1           0
+ shift: j,n,nl,il =            9           6           8           5          12
+ SHIFT: j,n,nl,il =            9           8           6           9          15
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   107    13     9   263   193    21    22     0       0     462     337
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S13/patch.input_107
+end
+while ( 1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 9 + 1
+echo m =, 10
+m =, 10
+@ k = 1 + 1
+echo -13 -10 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ SHIFT: j,n,nl,il =            1           5           1           7           2
+   shift: i,pt,px =            5          81          74
+   shift: i,pt,px =            4          61          54
+   shift: i,pt,px =            3          41          34
+   shift: i,pt,px =            2          21          14
+   shift: i,pt,px =            1           1           0
+ shift: j,n,nl,il =           10           6           8           8           9
+ SHIFT: j,n,nl,il =           10           8           6          12          12
+   shift: i,pt,px =            8         144         132
+   shift: i,pt,px =            7         123         111
+   shift: i,pt,px =            6         102           0
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   119    13    10   263   193    21    20     0       0     420     303
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S13/patch.input_119
+end
+while ( 2 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 9 + 2
+echo m =, 11
+m =, 11
+@ k = 2 + 1
+echo -13 -11 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ SHIFT: j,n,nl,il =            1           5           2           8          21
+ shift: j,n,nl,il =           11           7           8           2           2
+   shift: i,pt,px =            7         123         125
+   shift: i,pt,px =            8         144           0
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   130    13    11   263   193    21    18     0       0     378     277
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S13/patch.input_130
+end
+while ( 3 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 9 + 3
+echo m =, 12
+m =, 12
+@ k = 3 + 1
+echo -13 -12 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            1           2           5           1          12
+ SHIFT: j,n,nl,il =            1           5           2           8          20
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   143    13    12   263   193    21    17     0       0     357     252
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S13/patch.input_143
+end
+while ( 4 < = 3 )
+end
+while ( 14 < = 14 )
+setenv n `echo $i | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+echo 14
+@ i = 14 + 1
+mkdir -p S14
+setenv NI `expr $n \* $NY`
+expr 14 * 193
+setenv M `expr $NI / $NX`
+expr 2702 / 263
+echo M =, 10
+M =, 10
+@ k = -1
+while ( -1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 10 + -1
+echo m =, 09
+m =, 09
+@ k = -1 + 1
+echo -14 -09 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            9           6           9          12           3
+   shift: i,pt,px =            6          95         107
+   shift: i,pt,px =            7         114         126
+   shift: i,pt,px =            8         133         145
+   shift: i,pt,px =            9         152           0
+ SHIFT: j,n,nl,il =            9           8           6           9          19
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   117    14     9   263   193    19    22     0       0     418     308
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S14/patch.input_117
+end
+while ( 0 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 10 + 0
+echo m =, 10
+m =, 10
+@ k = 0 + 1
+echo -14 -10 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            1           2           5           1          19
+ shift: j,n,nl,il =           10           6           8          15          19
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   130    14    10   263   193    19    20     0       0     380     277
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S14/patch.input_130
+end
+while ( 1 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 10 + 1
+echo m =, 11
+m =, 11
+@ k = 1 + 1
+echo -14 -11 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            1           2           5           2          18
+ SHIFT: j,n,nl,il =            1           5           2           1          17
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   141    14    11   263   193    19    18     0       0     342     256
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S14/patch.input_141
+end
+while ( 2 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 10 + 2
+echo m =, 12
+m =, 12
+@ k = 2 + 1
+echo -14 -12 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            1           2           5           3          18
+ SHIFT: j,n,nl,il =            1           5           2           1          16
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   155    14    12   263   193    19    17     0       0     323     233
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+head -2 fort.21
+awk {printf("%3.3d\n",$1)}
+tail -1
+mv fort.21 S14/patch.input_155
+end
+while ( 3 < = 3 )
+setenv m `expr $M + $k | awk '{printf("%02d",$1)}'`
+awk {printf("%02d",$1)}
+expr 10 + 3
+echo m =, 13
+m =, 13
+@ k = 3 + 1
+echo -14 -13 9.1
+/p/home/wallcraf/HYCOM-tools/topo/src/partit
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ shift: j,n,nl,il =            1           2           5           3          18
+ SHIFT: j,n,nl,il =            1           5           2           1          16
+
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+   168    14    13   263   193    19    15     0       0     285     214
+
+setenv nm `head -2 fort.21 | tail -1 | awk '{printf("%3.3d\n",$1)}'`
+awk {printf("%3.3d\n",$1)}
+tail -1
+head -2 fort.21
+mv fort.21 S14/patch.input_168
+end
+while ( 4 < = 3 )
+end
+while ( 15 < = 14 )

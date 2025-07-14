@@ -1,0 +1,229 @@
+setenv DS /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo
+setenv D /p/home/wallcraf/HYCOM-examples/GOMb0.08/topo/partit/15
+setenv T `echo $cwd | awk -f depth.awk`
+awk -f depth.awk
+echo /p/home/wallcraf/HYCOM-examples/GOMb0.08/topo/partit/15
+setenv TV `echo ${T} | cut -d"_" -f 3-`
+cut -d_ -f 3-
+echo depth_GOMb0.08_15
+cd /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/partit/15
+echo /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/partit/15
+/p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/partit/15
+/bin/rm -f regional.grid.a regional.grid.b
+ln -s /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/regional.grid.a .
+ln -s /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/regional.grid.b .
+ln -s /p/home/wallcraf/HYCOM-examples/GOMb0.08/topo/partit/15/xbathy.pal .
+setenv FOR021 fort.21
+setenv FOR051 /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/depth_GOMb0.08_15.b
+setenv FOR051A /p/work1/wallcraf/HYCOM-examples/GOMb0.08/datasets/topo/depth_GOMb0.08_15.a
+ln -s S04/patch.input_016 depth_GOMb0.08_15.016s
+ln -s S06/patch.input_024 depth_GOMb0.08_15.024s
+ln -s S06/patch.input_030 depth_GOMb0.08_15.030s
+ln -s S08/patch.input_047 depth_GOMb0.08_15.047s
+ln -s S09/patch.input_062 depth_GOMb0.08_15.062s
+ln -s S13/patch.input_096 depth_GOMb0.08_15.096s
+ln -s S12/patch.input_122 depth_GOMb0.08_15.122s
+foreach f ( depth_GOMb0.08_15.[0-9]??s )
+cp depth_GOMb0.08_15.016s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15264
+             SEA POINTS =        35495
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_15.016s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_15.024s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15264
+             SEA POINTS =        35495
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_15.024s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_15.030s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15264
+             SEA POINTS =        35495
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_15.030s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_15.047s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15264
+             SEA POINTS =        35495
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_15.047s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_15.062s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15264
+             SEA POINTS =        35495
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_15.062s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_15.096s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15264
+             SEA POINTS =        35495
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_15.096s.ppm
+/bin/rm -f fort.21
+end
+cp depth_GOMb0.08_15.122s fort.21
+echo 1
+/p/home/wallcraf/HYCOM-tools/topo/src/topo_ppmX
+ksub =  1
+
+xcspmd: idm,jdm =  263  193
+
+
+Test                                                                           
+idm/jdm= 263 193                                                               
+                                                                               
+                                                                               
+                                                                               
+min, max depth =  2.0000000E+00  6.7688042E+03
+ 
+ IP(:,47) =          255         255           0
+ IP(:,48) =            0           0         255
+ IP(:,49) =            0         255         255
+ IP(:,50) =          255           0         255
+ 
+ 
+ TOPIMG STATISTICS:
+            LAND POINTS =        15264
+             SEA POINTS =        35495
+ 
+ WRITING IMAGE TO fort.31
+mv fort.31 depth_GOMb0.08_15.122s.ppm
+/bin/rm -f fort.21
+end

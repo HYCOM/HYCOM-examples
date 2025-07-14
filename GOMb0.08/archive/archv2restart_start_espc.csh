@@ -1,14 +1,11 @@
 #!/bin/csh -x
-#PBS -N restart_153_018a
+#PBS -N archv2restart_start_espc
 #PBS -j oe
-#PBS -o restart_153_018a.log
+#PBS -o archv2restart_start_espc.log
 #PBS -W umask=027
-# only need a single node
-#PBS -l select=1:ncpus=32
-#PBS -l place=scatter:excl
 #PBS -l walltime=0:30:00
-#PBS -A NRLSS03755018
-#PBS -q debug
+#PBS -A ONRDC10855122
+#PBS -q serial
 #
 set echo
 #
@@ -19,7 +16,12 @@ setenv D /p/work1/${user}/HYCOM-examples/GOMb0.08/datasets/subregion/
 setenv T 15 
 setenv DS /p/work1/${user}/HYCOM-examples/GOMb0.08/datasets/
 setenv O /p/work1/${user}/HYCOM-examples/GOMb0.08/expt_01.4/data/
-
+#
+setenv DY 01
+setenv MN 09
+setenv P  i
+setenv YR 124
+setenv YY `echo ${YR} | awk '{printf("%04d", $1+1900)}'`
 #
 mkdir -p ${O}
 cd       ${O}
@@ -44,16 +46,24 @@ if (-z regional.grid.b) then
   /bin/ln -s ${DS}/topo/regional.grid.b .
 endif
 #
+# --- restart is at 00Z, archive might be at 12Z
+setenv WD `echo ${YY} ${MN} ${DY} 00 | ~/HYCOM-tools/bin/hycom_ymdh_wind | cut -c 2-6`
+echo $WD
+touch   ${D}/archm.${YY}${MN}${DY}_restart.B
+if ( -z ${D}/archm.${YY}${MN}${DY}_restart.B) then
+  /bin/mv ${D}/archm.${YY}${MN}${DY}_restart.b ${D}/archm.${YY}${MN}${DY}_restart.B
+  sed -e "s/${WD}.50/${WD}.00/g" ${D}/archm.${YY}${MN}${DY}_restart.B >! ${D}/archm.${YY}${MN}${DY}_restart.b
+endif
+#
 # ---  input archive file
 # ---  input restart file
 # --- output restart file
-#
-/bin/rm -f ${O}/restart_125a.a ${O}/restart_125a.b
+/bin/rm -f ${O}/restart_${YR}${P}.a ${O}/restart_${YR}${P}.b
 #aprun -n 1 ~/HYCOM-tools/archive/src/archv2restart <<E-o-D
 ~/HYCOM-tools/archive/src/archv2restart <<E-o-D
-${D}/archm.2025_001_12_restart.a
-${R}/restart_template_15.a
-${O}/restart_125a.a
+${D}/archm.${YY}${MN}${DY}_restart.a
+${R}/restart_001b.a
+${O}/restart_${YR}${P}.a
  014     'iexpt ' = experiment number x10 (000=from archive file)
   3     'yrflag' = days in year flag (0=360J16,1=366J16,2=366J01,3-actual)
 263     'idm   ' = longitudinal array size

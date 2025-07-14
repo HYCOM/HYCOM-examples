@@ -1,13 +1,11 @@
 #! /bin/csh -x
-#PBS -N Rnest_GOMb0.08
+#PBS -N Rsubregion_for_restart
 #PBS -j oe
-#PBS -o Rnest_GOMb0.08.log
+#PBS -o subregion_for_restart.log
 #PBS -W umask=027 
-#PBS -l select=1:ncpus=48
-#PBS -l place=scatter:excl
-#PBS -l walltime=1:30:00
+#PBS -l walltime=0:30:00
 #PBS -A ONRDC10855122
-#PBS -q standard
+#PBS -q serial
 #
 module list
 set echo

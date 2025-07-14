@@ -1,0 +1,19 @@
+How to generate a restart from an ESPC-V2 archive
+
+1) Run for 1 day, with no forcing and no ports, from January climatology 
+to create a "template" restart.
+
+-rw-r--r-- 1 wallcraf 0375G018  42584 Jul 10 15:10 014y001a.csh
+-rw-r--r-- 1 wallcraf 0375G018     18 Jul 10 13:27 014y001a.limits
+-rw-r--r-- 1 wallcraf 0375G018 159430 Jul 10 15:43 014y001a.log
+-rw-r--r-- 1 wallcraf 0375G018  20243 Jul 10 15:41 blkdat.input_001a
+
+2) Interpolate a GLBy0.08 archive to GOMb0.08
+
+3) Create the restart
+
+narwhal06 245> pwd
+/p/home/wallcraf/HYCOM-examples/GOMb0.08/expt_01.4
+narwhal06 246> ll ../archive/*espc.???
+-rw-r--r-- 1 wallcraf 0375G018  2536 Jul 11 13:22 ../archive/archv2restart_start_espc.csh
+-rw-r--r-- 1 wallcraf 0375G018 30873 Jul 11 13:22 ../archive/archv2restart_start_espc.log

@@ -25,6 +25,9 @@ tar xvf force_offset.tar.gz
 # --- N.B.: can be created using ${R}/force/rivers
 wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/force_rivers.tar.gz
 tar xvf force_rivers.tar.gz
+# --- depth_07 and 15 have the same rivers
+ln -s $cwd/force/rivers/rivers_07.a force/rivers/rivers_15.a
+ln -s $cwd/force/rivers/rivers_07.b force/rivers/rivers_15.b
 
 # --- get seawifs data,
 # --- N.B.: can be created using ${R}/force/seawifs
@@ -38,6 +41,8 @@ tar xvf force_seawifs.tar.gz
 ## --- HYCOM-examples/datasets/WOA13_HYCOM or HYCOM-examples/datasets/PHC3_HYCOM
 #wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_010.tar.gz
 #tar xvf relax_010.tar.gz
+wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/relax_014.tar.gz
+tar xvf relax_014.tar.gz
 #
 ## --- get SSH files
 ## --- N.B.: can be created using ${R}/relax/SSH scripts
@@ -102,7 +107,8 @@ tar xvf relax_SSSRMX.tar.gz
 # --- N.B.: can be created using GLBy0.08/subregion scripts
 # --- data available from 2024/09 to 2025/05,i.e. 124i,124j,124k,124l,125a,125b,125c,125d,125e 
 # --- HYCOM-examples/datasets/nest
-cd nest/
+mkdir -p nest
+cd       nest
 wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/subregion_espc/archm_124i_espc.tar.gz
 tar xvf archm_124i_espc.tar.gz
 cd ../
@@ -111,8 +117,3 @@ cd ../
 # --- N.B.: can be created using ${R}/topo
 wget http://data.hycom.org/pub/GitHub/HYCOM-examples/${R}/datasets/topo_espc.tar.gz
 tar xvf topo_espc.tar.gz
-
-
-
-
-

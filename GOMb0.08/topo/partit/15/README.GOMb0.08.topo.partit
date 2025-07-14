@@ -1,0 +1,36 @@
+HYCOM-examples/GOMb0.08/topo/partit/15/README.GOMb0.08.topo.partit
+
+Generate nearly-equal sized tile MPI partitions for GOMb0.08.
+
+a) Run depth_2d_Ssq.csh to generate candidate partitions
+b) Run size_S.csh to list the partitions in MPI task order (size_S.lis)
+c) Run ppm1.csh to softlink to the chosen partitions and make image maps
+d) Run resize8.csh to set the partition's 1st dimension for better vector
+   performance
+
+The resulting partitions are *s8:
+
+-rw-r--r--  1 wallcraf 0375G018  518 Jul 10 13:56 depth_GOMb0.08_15.016s8
+-rw-r--r--  1 wallcraf 0375G018  614 Jul 10 13:56 depth_GOMb0.08_15.024s8
+-rw-r--r--  1 wallcraf 0375G018  724 Jul 10 13:56 depth_GOMb0.08_15.030s8
+-rw-r--r--  1 wallcraf 0375G018  978 Jul 10 13:56 depth_GOMb0.08_15.047s8
+-rw-r--r--  1 wallcraf 0375G018 1378 Jul 10 13:56 depth_GOMb0.08_15.062s8
+-rw-r--r--  1 wallcraf 0375G018 1934 Jul 10 13:56 depth_GOMb0.08_15.096s8
+-rw-r--r--  1 wallcraf 0375G018 2488 Jul 10 13:56 depth_GOMb0.08_15.122s8
+
+These were chosen for 16, 24, 32, 48, 64, 96 or 128 cores per node, but will 
+work well with 2/4/8/12 cores per node.  Most discard tiles that are entirely 
+over land, and so don't necessarily fill the node.  For example 047s8 is a 
+8x6 partition with 1 discarded tile, so 1 core will be unused on a 
+48-core node.  We typically allocate unused cores to the 1st MPI node,
+but how to do this varies between MPI libraries.
+
+> head -n 2 depth_GOMb0.08_15.047s8
+  npes   npe   mpe   idm   jdm  ibig  jbig  nreg  minsea  maxsea  avesea
+    47     8     6   263   193    36    33     0       1    1089     768
+
+For other domains:
+
+1) Use partit_arctic instead of partit for global tripole grids
+2) Only tripole grids require npe to be an even divisor of idm
+3) For larger regions the ppm images from ppmX can be scaled down

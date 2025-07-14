@@ -28,6 +28,7 @@ C ---        1 year to get Montgomery Potential correction
 C --- 01.2 - twin of 01.1 with Montgomery correction from 1 year of 01.1
 C --- 01.3 - twin of 01.2 with tides
 C --- 01.4 - twin of 01.2 using daily ESPC-D-V02 analysis files as nest 
+C ---        Short run to create a template restart From Jan climatology.
 C
 C --- EX is experiment directory, required because batch systems often start scripts in home
 C
@@ -50,6 +51,10 @@ C --- MAKE_FORCE is logical for creating forcing at run time.
 C --- N is the name of the atmospheric forcing for PRE-processing.
 C
 source ${EX}/EXPT.src
+C
+C --- No forcing
+C
+setenv MAKE_FORCE -1
 C
 C --- Set parallel configuration, see ../README/README.expt_parallel.
 C --- NOMP = number of OpenMP threads, 0 for no OpenMP, 1 for inactive OpenMP
@@ -150,10 +155,10 @@ C ---   Y01 is the start model year of this run.
 C ---   YXX is the end   model year of this run, usually Y01.
 C --- Note that these variables are set by the .awk generating script.
 C
-setenv A "i"
-setenv B "j"
-setenv Y01 "124"
-setenv YXX "124"
+setenv A "a"
+setenv B "a"
+setenv Y01 "001"
+setenv YXX "001"
 setenv YOF `echo ${Y01} | awk '{printf("%04.0f", $1+1900)}'`
 C
 echo "Y01 =" $Y01 "YXX = " $YXX  "A =" ${A} "B =" ${B}
